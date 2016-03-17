@@ -1,0 +1,116 @@
+.cuenta{
+
+	@include centrado(960px)
+
+	&__item{
+		margin: 2rem auto;
+		max-width: 90%;
+
+
+		@extend .sombra-top;
+
+
+		&--imagen{
+
+			img{
+				margin-left: auto;
+				margin-right: auto;
+				
+			}
+		}
+
+		&--info{
+			padding-left: 1rem;
+			text-align: center;
+
+			h2{
+				margin-bottom: 8px;
+				font-size: 24px;
+				font-weight: 400;
+				
+			}
+
+			p{
+				color: #525252;
+				font-size: 13px;
+				line-height: 18px;
+			}
+
+			a{
+				background-color: #000;
+				bottom: -10px;
+				border-radius: 5px;
+				text-align: center;
+				color: #fff;
+				font-size: .6rem;
+				margin: 10px 0;
+				padding: 5px 10px;
+				-moz-transition: all .5s ease;
+				-webkit-transition: all .5s ease;
+				-o-transition: all .5s ease;
+				transition: all .5s ease;
+				width: 100px;
+			}
+		}
+
+
+
+
+
+		/*====| MediaQuerie cuenta__item 768px |====*/
+
+		@media screen and(min-width:768px){
+
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+
+			-ms-align-items: center;
+			align-items: center;
+
+			-webkit-justify-content: space-around;
+			-moz-justify-content: space-around;
+			-ms-justify-content: space-around;
+			-o-justify-content: space-around;
+			justify-content: space-around;
+			max-width: 100%;
+			
+			@include flexbox-display-flex;
+
+			&--imagen{
+				width: 35%;
+
+				img{
+					margin-right: auto;
+					margin-left: auto;
+				}
+				
+			}
+			&--info{
+				width: 60%;
+				text-align: left;
+			}
+
+
+			&.reverse{
+				-webkit-flex-direction: row-reverse;
+				-moz-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				-o-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+
+				&{
+					.cuenta__item--info{
+						text-align: right;
+						margin-right: 1rem;
+					}
+				}
+
+			}
+
+		}
+	}
+
+}

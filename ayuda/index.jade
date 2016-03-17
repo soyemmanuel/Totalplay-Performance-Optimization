@@ -1,0 +1,121 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Ayuda"
+	- var currentUrl = "/ayuda"
+	- var favicon = "images/favicon.ico"
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Ayuda
+			span Totalplay
+
+		h2 Tenemos diversas vías para proporcionarte ayuda, elige la de tu preferencia
+
+
+	section.ayuda
+
+		aside.ayuda__division.ayuda__division--1
+
+			.ayuda__item
+				h4 Vía Chat
+				.ayuda__item--chat
+					p Atención a clientes:
+					a(href="") ¡Click Aquí!
+				.ayuda__item--chat
+					p Soporte Técnico
+					a(href="") ¡Click Aquí!
+
+			.ayuda__item
+				h4 Vía Telefonica
+				.ayuda__item--telefono
+					a(href="") D.F. y Área Metropolitana 
+						span 1579 8000
+				.ayuda__item--telefono
+					a(href="") Interior de la República 
+						span 01 800 510 0510
+			.ayuda__item
+				h4 Vía Electrónica
+				.ayuda__item--electronica
+					p Completa un formulario electrónico para dar seguimiento a tu solicitud
+					a(href="") ¡Click Aquí!
+
+			.ayuda__item
+				h4 Redes Sociales
+				.ayuda__item--sociales
+					p Estamos para ayudarte en cualquier problema con nuestro servicio
+				.ayuda__item--sociales
+					a(href="") Twitter
+				.ayuda__item--sociales
+					a(href="") Facebook
+
+		aside.ayuda__division.ayuda__division--2
+
+			.ayuda__item
+				.ayuda__item--preguntas
+					img(src="images/marzo-15/preguntas-frecuentes.jpg", alt="Preguntas frecuentes")
+				.ayuda__item--preguntas
+					h4 Preguntas frecuentes
+					p Encuentra algunas de las preguntas frecuentes de nuestros usuarios.
+					a(href="") ¡Click Aquí!
+			.ayuda__item
+				.ayuda__item--manuales
+					img(src="images/marzo-15/manuales.jpg", alt="Manuales")
+				.ayuda__item--manuales
+					h4 Manuales
+					p Elige y descarga el manual que necesites:
+					a(href="") ¡Click Aquí!
+
+		aside.ayuda__division.ayuda__division--3
+
+			.ayuda__item
+				.ayuda__item--legales.ayuda__item--legales-justicia
+					h4 Colaboración en Materia de Seguridad y Justicia Totalplay
+					a(href="") colaboracion.justicia@totalplay.com.mx
+					p Periférico Sur 4119, Torre A, piso 7, Col. Fuentes del Pedregal, México, D.F.
+
+			.ayuda__item
+				.ayuda__item--legales.ayuda__item--legales-contratos
+					h4 Contratos
+					a(href="") Clausulado de contrato
+					a(href="") Cesión de derechos
+
+			.ayuda__item
+				.ayuda__item--portabilidad
+					h4 Portabilidad
+					p Llama a nuestro centro de atención a clientes: Conserva tu número teléfonico.
+					a(href="") Formato de Portabilidad
+	
+
+

@@ -1,0 +1,118 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay"
+	- var currentUrl = "/totalplay"
+	- var favicon = "images/favicon.ico"
+
+
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "quees_julio_01.jpg"
+	- var alt = "Internet Totalplay"
+	
+	- var values = [];
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+block Content
+
+	.page-title
+		h1  ¿Que es
+			span Totalplay
+
+		h2 Es el servicio de Tripleplay más innovador de México. ¡Disfruta lo que nunca imaginaste!
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+
+	figure.totalplay__imagen
+		img(src="images/1.png", alt="¿Que es Totalplay?")
+
+	section.totalplay
+
+
+		.totalplay__item
+			.totalplay__item--imagen
+				img(src="images/totalplay-internet.png", alt="Internet Totalplay")
+			.totalplay__item--info
+				h3 Internet
+				p Te brindamos el Internet más veloz de México, el que siempre soñaste, con el que puedes descargar y enviar lo que quieras con la máxima velocidad de hasta 300 Mbps, permitiéndote disfrutar de toda una gama de exclusivos servicios que nadie más tiene en el mercado.
+		.totalplay__item.reverse
+			.totalplay__item--imagen
+				img(src="images/totalplay-television.png", alt="Televisión Totalplay")
+			.totalplay__item--info
+				h3 Televisión
+				p La única TV de paga realmente interactiva. Saca provecho a tu televisión con la mejor señal en HD incluida en todos nuestros planes, sintoniza más de 260 canales con la programación que más te gusta, además regresa en el tiempo y ve los programas que te perdiste sin costo adicional. Disfruta de nuestro extenso catálogo de Video On Demand con cientos de títulos incluido contenido en 3D. También contamos con aplicaciones increíbles desde tu TV que te conectan a tu mundo.
+	
+		.totalplay__item
+			.totalplay__item--imagen
+				img(src="images/totalplay-telefonia.png", alt="Telefonía Totalplay")
+			.totalplay__item--info
+				h3 Telefonía
+				p Habla sin preocuparte, con llamadas a números fijos y de larga distancia nacional e internacional sin límite, con los minutos a celular que justo necesitas.
+		.totalplay__item.reverse
+			.totalplay__item--imagen
+				img(src="images/totalplay-fibra-optica.png", alt="Fibra Óptica Totalplay")
+			.totalplay__item--info
+				h3 Fibra Óptica
+				p  A través de la tecnología FTTH (Fiber To The Home), hacemos llegar la fibra óptica hasta tu hogar, permitiéndonos entregar múltiples servicios a través de una sola conexión confiable, veloz y de alta calidad.
+
+
+
+

@@ -1,0 +1,125 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Contrata"
+	- var currentUrl = "/contrata"
+	- var favicon = "images/favicon.ico"
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  ¡Cambiate 
+			span Ya!
+
+		h2 Ingresa tus datos y uno de nuestros asesores se pondrá en contacto contigo.
+
+	section.contrata
+		
+
+
+		.contrata__bloque
+
+			.contrata__form
+		
+				.contrata__titulo
+					p: span Contrata aquí
+					p antes de contratar verifica tu cobertura 
+						a.int-link(href='/web/mapas/index.html') aquí
+
+				form#contrata_form.form-dis
+				
+					.form__group
+						p Nombre
+						input#total_play_contacto_nombre.req.valid(type='text', name='nombre')
+					.form__group
+						p E-Mail
+						input#input-email.req.valid(type='email', name='email')
+					.form__group
+						p Teléfono
+						input#total_play_contacto_telefono.req.valid(type='tel', name='telefono')
+					.form__group
+						p Calle
+						input#input-calle.frm-street-txt.req.valid(type='text', name='calle')
+					.form__group
+						p Num Ext.
+						input#input-numext.frm-number-txt.req.valid(type='text', name='numero_exterior')
+					.form__group
+						p Num Int.
+						input#total_play_contrata_numero_interior.example(type='text', name='numero_interior')
+					.form__group
+						p Colonia
+						input#input-colonia.frm-city-txt.req.valid(type='text', name='colonia')
+					.form__group
+						p C.P.
+						input#total_play_contacto_cp.frm-zip-txt.req.example(type='number', name='cp')
+					.form__group
+						p Ciudad
+						select(name='ciudad_id')
+							option(value='11') Aguascalientes
+							option(value='15') Cancún
+							option(value='5') Celaya
+							option(value='16') Chihuahua
+							option(value='17') Ciudad Juárez
+							option(value='4') Cuernavaca
+							option(value='2') Guadalajara
+							option(value='18') León
+							option(value='7') Mérida
+							option(value='1') México
+							option(value='12') Monterrey
+							option(value='19') Morelia
+							option(value='8') Pachuca
+							option(value='6') Puebla
+							option(value='10') Querétaro
+							option(value='20') San Luis Potosí
+							option(value='9') Tijuana
+							option(value='3') Toluca
+							option(value='13') Veracruz
+							option(value='14') Xalapa
+					.form__group.enviar
+						button.btn-compact.button-form.enviar-footer-form(type='button') Enviar
+
+			.contrata__imagen
+				img(src="images/3.png", alt="Contrata")
+
+		.contrata__puntos-venta
+			h2 También puedes contratar 
+				span.total-total
+					| Total
+					span.total-p p
+					span.total-l l
+					span.total-a a
+					span.total-y y
+				|  en los siguientes puntos de venta:
+
+
+
+	

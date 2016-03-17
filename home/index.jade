@@ -1,0 +1,202 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA DE INICIO TOTALPLAY
+	*
+	* Variables ____________________________________ @Variables
+	* Contenido Principal __________________________ @Contenido
+	* Slider de la página Principal ________________ @Slider
+	* Paquetes _____________________________________ @Paquetes
+	* Servicios ____________________________________ @Servicios
+	*
+	\*-----------------------------------------------------*/
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+
+
+block slider
+
+	- var folder = "home/images/slider/febrero"
+	- var defaulSlider = "empresarios.jpg"
+	- var alt = "Internet Totalplay"
+	
+	- var values = [];
+	- values.push({enlace:'empresarios', imagen:'empresarios.jpg'});
+	- values.push({enlace:'internet',imagen:'internet.jpg'});
+	- values.push({enlace:'promociones',imagen:'oscares.png'});
+	- values.push({enlace:'promociones',imagen:'promo-febrero.jpg'});
+
+
+
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+block Content
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	main.main
+		block variablesPaquetes
+		block variablesServicios
+
+
+
+		//- /*=====================================================*\
+			    * @Paquetes *
+			\*=====================================================*/
+
+
+		section.packs.packs__home
+
+			//- Totalplay Donde Sea
+
+			.packs__item
+				a(href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm" , target="_blank")
+					figure.packs__item--figure
+						img(src="home/images/boxSlider-donde-sea.png", alt="")
+						figcaption.packs__item--description
+								h3.h3.packs__item--title Totalplay Donde Sea
+								p Disfruta de películas, TV en vivo, series y más desde tu smartphone, tablet o computadora.
+				a.packs__item--vermas(href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm", target="_blank") Leer más...
+
+			//- Promociones
+
+			.packs__item
+				a(href="promociones")
+					figure.packs__item--figure
+						img(src="home/images/promociones-home-enero-2015.png", alt="")
+						figcaption.packs__item--description
+							h3.h3.packs__item--title Promociones
+							p Conoce las sorpresas que tenemos para ti, aprovéchalas y no te quedes fuera.
+				a.packs__item--vermas(href="promociones") Leer más...
+
+			//- Video On Demand
+
+			.packs__item
+				a(href="vod")
+					figure.packs__item--figure
+						img(src="home/images/boxSlider-vod.png", alt="")
+						figcaption.packs__item--description
+							h3.h3.packs__item--title Video On Demand
+							p Disfruta del mejor contenido con cientos de títulos entre películas, series, telenovelas, contenido infantil y más.
+				a.packs__item--vermas(href="vod") Leer más...
+
+			//- AnytimeTv
+
+			.packs__item
+				a(href="television")
+					figure.packs__item--figure
+							img(src="home/images/boxSlider-anytime.png", alt="")
+						figcaption.packs__item--description
+							h3.h3.packs__item--title AnytimeTv
+							p Regresa el tiempo de tus programas sin costo extra.
+				a.packs__item--vermas(href="television") Leer más...
+
+
+
+
+
+		//- /*=====================================================*\
+			    * @Servicios*
+			\*=====================================================*/
+
+
+		section.servicios
+
+			//- Empresarios
+
+			.servicios__item.reverse
+				.servicios__item--item.servicios__item--imagen
+					a(href="empresarios")
+						img(src="home/images/home-empresarios.png", alt="Empresarios")
+				.servicios__item--item.servicios__item--description
+					h3.h3 ¿Quieres que tu proyecto llegue más lejos?
+					p Descubre la forma de impulsar tu empresa mediante las aplicaciones tecnológicas que tenemos para ti en nuestros planes, contrata y crece con nosotros.
+						a.servicios__item--vermas(href="empresarios") Leer más...
+
+			//- Estado de cuenta
+
+			.servicios__item
+				.servicios__item--item.servicios__item--imagen
+					a(href="estado-de-cuenta" )
+						img(src="home/images/estado-de-cuenta.png", alt="")
+				.servicios__item--item.servicios__item--description
+					h3.h3 Conoce tu Estado de Cuenta y formas de pago
+					p Conoce todo lo relacionado a tu Estado de Cuenta y las diferentes maneras en que puedes realizar tu pago, además infórmate como funciona el descuento pronto pago y mucho más.
+						a.servicios__item--vermas(href="estado-de-cuenta" ) Leer más...
+
+			//- Instalaciones
+
+			.servicios__item.reverse
+				.servicios__item--item.servicios__item--imagen
+					a(href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm")
+						img(src="home/images/instalacion.jpg", alt="")
+				.servicios__item--item.servicios__item--description
+					h3.h3 Instalaciones
+					p Verifica el estado de tu instalación en tan sólo segundos, la manera más rápida de conocer en qué parte del proceso se encuentra. Dentro de poco podrás disfrutar de la emoción absoluta de Totalplay
+						a.servicios__item--vermas(href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm") Leer más...
+
+			//- distribuidores
+
+			.servicios__item
+				.servicios__item--item.servicios__item--imagen
+					a(href="distribuidores")
+						img(src="home/images/distribuidores.png", alt="")
+				.servicios__item--item.servicios__item--description
+					h3.h3 Distribuidores
+					p Regálanos unos minutos para formar parte de nuestro equipo de representantes Totalplay.
+						a.servicios__item--vermas(href="distribuidores") Leer más...
+
+			//- Información Corporativa
+
+			.servicios__item.reverse
+				.servicios__item--item.servicios__item--imagen
+					a(href="info-corporativa")
+						img(src="home/images/informacion-corporativa.png", alt="")
+				.servicios__item--item.servicios__item--description
+					h3.h3 Información Corporativa
+					p Conócenos más a fondo y verás que tenemos más productos y servicios de los que te puedes imaginar.
+						a.servicios__item--vermas(href="info-corporativa") Leer más...

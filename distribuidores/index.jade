@@ -1,0 +1,187 @@
+//- Template
+extends ../template/template
+
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Distribuidores"
+	- var currentUrl = "/distribuidores"
+	- var favicon = "images/favicon.ico"
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Sé parte de nuestro 
+			span equipo de distribuidores
+
+		h2 Únete a la empresa de más rápido crecimiento y con el mejor servicio TriplePlay en México. Obtén mayores ganancias y excelentes beneficios. Uno de nuestros representantes se pondrá en contacto contigo.
+
+	section.distribuidores
+		
+
+
+		.distribuidores__bloque
+
+			.distribuidores__form
+		
+				.distribuidores__titulo
+					p: span Distribuidores
+					p Todos los campos son requeridos 
+
+				form#distribuidoresFORM.formee.form-dis.form-dis-inter(method='post', enctype='multipart/form-data', action='/contents/conf/cvalidator/distribuidores-submit.php')
+				
+					.form__group
+						p Nombre
+						input#total_play_distribuidores_nombre.par-100.par-top(type='text', name='total_play_distribuidores[nombre]')
+					
+					.form__group
+						p Lada
+						input#total_play_distribuidores_telefono_lada.par-100.par-top(type='text', name='total_play_distribuidores[telefono_lada]')
+					
+					.form__group
+						p Teléfono
+						input#total_play_distribuidores_telefono.par-100.par-top(type='text', name='total_play_distribuidores[telefono]')
+					
+					.form__group
+						p Lada
+						input#total_play_distribuidores_celular_lada.par-100.par-top(type='text', name='total_play_distribuidores[celular_lada]')
+					
+					.form__group
+						p Celular
+						input#total_play_distribuidores_celular.par-100.par-top(type='text', name='total_play_distribuidores[celular]')
+					
+					.form__group
+						p E-Mail
+						input#total_play_distribuidores_email.par-100.par-top(type='text', name='total_play_distribuidores[email]')
+					
+					.form__group
+						p Ciudad
+						input#total_play_distribuidores_ciudad.par-100.par-top(type='text', name='total_play_distribuidores[ciudad]')
+					
+					.form__group
+						p Municipio
+						input#total_play_distribuidores_municipio.par-100.par-top(type='text', name='total_play_distribuidores[municipio]')
+					
+					.form__group
+						p Estado
+						select#total_play_distribuidores_estado.par-100.par-top(name='total_play_distribuidores[estado]')
+							option(value='AGU') Aguascalientes
+							option(value='BCN') Baja California
+							option(value='BCS') Baja California Sur
+							option(value='CAM') Campeche
+							option(value='CHP') Chiapas
+							option(value='CHH') Chihuahua
+							option(value='COA') Coahuila
+							option(value='COL') Colima
+							option(value='DIF') Distrito Federal
+							option(value='DUR') Durango
+							option(value='MEX') Estado de México
+							option(value='GUA') Guanajuato
+							option(value='GRO') Guerrero
+							option(value='HID') Hidalgo
+							option(value='JAL') Jalisco
+							option(value='MIC') Michoacán
+							option(value='MOR') Morelos
+							option(value='NAY') Nayarit
+							option(value='NLE') Nuevo León
+							option(value='OAX') Oaxaca
+							option(value='PUE') Puebla
+							option(value='QUE') Querétaro
+							option(value='ROO') Quintana Roo
+							option(value='SLP') San Luis Potosí
+							option(value='SIN') Sinaloa
+							option(value='SON') Sonora
+							option(value='TAB') Tabasco
+							option(value='TAM') Tamaulipas
+							option(value='TLA') Tlaxcala
+							option(value='VER') Veracruz
+							option(value='YUC') Yucatán
+							option(value='ZAC') Zacatecas
+					
+					.form__group
+						p ¿Cuentas con negocio propio?
+					
+					.form__group.radios-ubi
+						input#total_play_distribuidores_negocio_1(name='total_play_distribuidores[negocio]', type='radio', value='1')
+						label(for='total_play_distribuidores_negocio_1') Sí
+						input#total_play_distribuidores_negocio_0(name='total_play_distribuidores[negocio]', type='radio', value='0', checked='')
+						label(for='total_play_distribuidores_negocio_0') No
+					
+					.form__group
+						p ¿Qué tipo de negocio es?
+						input#total_play_distribuidores_tipo_negocio.par-100.par-top(type='text', name='total_play_distribuidores[tipo_negocio]')
+					
+					.form__group
+						p ¿Cuentas con local comercial?
+					
+					.form__group.radios-ubi
+						input#total_play_distribuidores_local_comercial_1(name='total_play_distribuidores[local_comercial]', type='radio', value='1')
+						label(for='total_play_distribuidores_local_comercial_1') Sí
+						input#total_play_distribuidores_local_comercial_0(name='total_play_distribuidores[local_comercial]', type='radio', value='0', checked='')
+						label(for='total_play_distribuidores_local_comercial_0') No
+					
+					.form__group
+						p ¿Tienes vendedores a tu cargo?
+					
+					.form__group.radios-ubi
+						input#total_play_distribuidores_vendedores_1(name='total_play_distribuidores[vendedores]', type='radio', value='1')
+						label(for='total_play_distribuidores_vendedores_1') Si
+						input#total_play_distribuidores_vendedores_0(name='total_play_distribuidores[vendedores]', type='radio', value='0', checked='')
+						label(for='total_play_distribuidores_vendedores_0') No
+					
+					.form__group
+						p ¿Qué vendes?
+						input#total_play_distribuidores_ventas.par-100.par-top(type='text', name='total_play_distribuidores[ventas]')
+					
+					.form__group
+						p ¿Cómo realizas la venta?
+					
+					.form__group.radios-ubi
+						input#total_play_distribuidores_tipo_venta_1(name='total_play_distribuidores[tipo_venta]', type='radio', value='1')
+						label(for='total_play_distribuidores_tipo_venta_1') Local / Módulo
+						input#total_play_distribuidores_tipo_venta_2(name='total_play_distribuidores[tipo_venta]', type='radio', value='2')
+						label(for='total_play_distribuidores_tipo_venta_2') Puerta a puerta
+						input#total_play_distribuidores_tipo_venta_3(name='total_play_distribuidores[tipo_venta]', type='radio', value='3')
+						label(for='total_play_distribuidores_tipo_venta_3') Teléfono
+					
+					.form__group
+						p Horario para contactar
+						select#total_play_distribuidores_horario.par-100.par-top(name='total_play_distribuidores[horario]')
+							option(value='1') 9-3
+							option(value='2') 3-6
+					
+					.form__group
+						p Adjunta tu propuesta o plan de negocios
+						input#total_play_distribuidores_file.par-100.par-top(type='file', name='total_play_distribuidores[file]')
+					
+					.form__group.enviar
+						button.enviar-footer-form.btn-compact.button-form(type='submit') Enviar
+
+			.distribuidores__imagen
+				img(src="images/1.png", alt="Sé parte de nuestro equipo de distribuidores")

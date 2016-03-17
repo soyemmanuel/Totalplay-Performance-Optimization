@@ -1,0 +1,114 @@
+//- /*-----------------------------------------------------*\
+	*
+	* TEMPLATE FOOTER
+	*
+	* Footer ____________________________ @Footer
+	* Formulario de contacto Footer _____ @Formulario
+	* Teléfonos (Cambiate Ya) ___________ @Teléfonos
+	* Secciones _________________________ @Secciones
+	* Legales ___________________________ @Legales
+	*
+	/*-----------------------------------------------------*\
+
+footer.footer__principal
+	.footer__wrap
+
+
+		//- /*=====================================*\
+			    * @Formulario *
+			\*=====================================*/
+
+		.footer__derecho(class={footer__empresarios: currentUrl == "/empresarios" || currentUrl == "/empresarios/contrata" || currentUrl == "/empresarios/paquetes"})
+						h2.h2 Contrata Aquí
+						p Antes de contratar verifica tu cobertura	<a href=""> aquí </a> 
+
+						form#contact-form
+							input.input-footer#total_play_contacto_nombre(type='text', name='nombre', placeholder='Nombre',autocorrect="off" autocapitalize="words")
+							input.input-footer#input-email(type='email', name='email', placeholder='E-mail')
+							input.input-footer#total_play_contacto_telefono(type='tel', placeholder='Teléfono', name='telefono')
+							input.input-footer#input-calle(type='text', name='calle', placeholder='Calle')
+							input.input-footer#input-numext(type='text', name='numero_exterior', placeholder='Número Exterior')
+							input.input-footer(type='text', name='numero_interior', placeholder='Número Interior')
+							input.input-footer#input-colonia(type='text', name='colonia', placeholder='Colonia')
+							input.input-footer#total_play_contacto_cp(type='text', placeholder='Código Postal', name='cp')
+							select.input-footer.btn-ciudad-footer(name='ciudad_id')
+								option Ciudad
+								option(value='5') Celaya
+								option(value='4') Cuernavaca
+								option(value='2') Guadalajara
+								option(value='7') Mérida
+								option(value='1') México
+								option(value='8') Pachuca
+								option(value='6') Puebla
+								option(value='3') Toluca
+							.enviar: button.enviar-footer-form(type='button') Enviar
+							input.input-footer#formulario_origen(type='hidden', value='', name='formulario_origen')
+							input.input-footer#URLD(type='hidden', value='', name='url_destino')
+		
+
+
+
+		//- /*=====================================*\
+			    * @Teléfonos *
+			\*=====================================*/
+		
+
+		.footer__izquierdo(class={footer__empresarios: currentUrl == "/empresarios" || currentUrl == "/empresarios/contrata" || currentUrl == "/empresarios/paquetes"})
+			.footer__izquierdo--item.footer__izquierdo--caja1
+					span.ocultar-tel
+						h2.h2 ¡Cámbiate Ya!
+						p 1721-3949
+						p ó
+						p 01800-808-7932
+				
+					span.mostrar-tel
+						h2.h2 ¡Cámbiate Ya!
+						a(href="") 1721-3949
+						| ó
+						a(href="") 01800-808-7932
+
+
+
+			//- /*=====================================*\
+				    * @Secciones *
+				\*=====================================*/
+
+
+			.footer__izquierdo--item.footer__izquierdo--caja2
+				h2.h2 Secciones
+				ul
+					li: a(href="") ¿Qué es Totalplay?
+					li: a(href="") Internet
+					li: a(href="") Televisión
+					li: a(href="") Video On Demand
+					li: a(href="") Telefonía
+					li: a(href="") Paquetes
+					li: a(href="") Cámbiate ya
+				ul
+					li: a(href="") Canales
+					li: a(href="") Ayuda
+					li: a(href="") Mi cuenta
+					li: a(href="") Facebook
+					li: a(href="") Twitter
+					li: a(href="") Youtube
+					li: a(href="") Cobertura
+
+
+
+
+			//- /*=====================================*\
+				    * @Legales *
+				\*=====================================*/
+
+
+			.footer__izquierdo--item.footer__izquierdo--caja3
+				p TODOS LOS DERECHOS RESERVADOS TOTAL PLAY TELECOMUNICACIONES S.A. DE C.V. 2014.
+					br
+					a(href="") TÉRMINOS Y CONDICIONES |
+					a(href="") AVISO DE PRIVACIDAD
+				p Totalplay no se hace responsable por errores en la información ocasionados por la conexión de internet o versión de navegador. Para garantizar la correcta visualización y certeza de la información aquí mostrada, te recomendamos utilizar los siguientes navegadores: 
+					a(href="") Internet Explorer 11, 
+					a(href="") Google Chrome 43, 
+					a(href="") Firefox 38, 
+					a(href="") Opera 30, Safari 8, 
+						| o versiones superiores a las mencionadas.

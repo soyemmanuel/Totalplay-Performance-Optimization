@@ -1,0 +1,161 @@
+.contrata{
+		font-weight: 400;
+
+		@include centrado(960px)
+
+	&__titulo{
+
+		color: #646464;
+		font-size: .8rem;
+		text-align: left;
+		margin: 0;
+		p{
+			margin: 0;
+			a{
+				color: $azul;
+			}
+		}
+		span{		
+			font-weight: 300;
+			font-size: 1.25rem;
+		}
+	}
+
+	&__form{
+		color: #646464;
+		max-width: 90%;
+		margin: 1rem auto;
+
+
+			.form__group{
+				margin-bottom: 5px;
+				margin-top: 5px;
+
+				p{
+					font-size: .8rem;
+					text-align: left;
+					margin: 0;	
+				}
+				input{
+					background: #fff;
+					border: solid 1px #ccc;
+					border-radius: 4px;
+					box-shadow: none;
+					margin: 5px 0;
+					padding: 5px 5px 5px 10px;
+					width: 100%;
+				}
+				select{
+					width: 100%;
+				}
+
+				&.enviar{
+					button{					
+						background-color: #01b5e2;
+						border: medium none;
+						border-radius: 3px;
+						display: block;
+						color: #fff;
+						cursor: pointer;
+						font-size: 2.5em;
+						outline: medium none;
+						padding: 15px 10px;
+						-moz-transition: all .5s ease;
+						-webkit-transition: all .5s ease;
+						-o-transition: all .5s ease;
+						transition: all .5s ease;
+						vertical-align: top;
+						width: 100%;					
+					}
+				}
+				
+			}
+	}
+
+
+
+
+
+
+	&__puntos-venta{
+		h2{
+			font-size: 1.25rem;
+			font-weight: 300;
+			text-align: center;
+
+			span{
+				font-weight: 700;
+
+				&.total{
+					&-p{
+						color:#00bdec;
+					}
+					&-l{
+						color:#b9d800;
+					}
+					&-a{
+						color:#ffb131;
+					}
+					&-y{
+						color:#e50a2d;
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+	&__bloque{
+		/*====| MediaQuerie contrata__bloque 768px |====*/
+
+		@media screen and(min-width:768px){
+
+			@include flexbox-display-flex;
+
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+
+			-webkit-flex-direction: row-reverse;
+			-moz-flex-direction: row-reverse;
+			-ms-flex-direction: row-reverse;
+			-o-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+
+			-ms-align-items: flex-end;
+			align-items: flex-end;
+
+			& {
+				.contrata{
+
+					&__form{
+						width: 50%;
+
+						.form__group{
+							display: inline-block;
+							vertical-align: middle;
+							width: 49%;
+
+							&:first-of-type,
+							&:last-of-type{
+								width: 100%;
+								display: block;
+							}
+
+						}
+					}
+
+					&__imagen{
+						width: 50%;
+					}
+				}
+			}
+		}
+
+
+	}
+}

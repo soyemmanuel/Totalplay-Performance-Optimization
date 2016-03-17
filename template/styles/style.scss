@@ -1,0 +1,1189 @@
+/*!
+ _____     _        _       _             
+|_   _|   | |      | |     | |            
+  | | ___ | |_ __ _| |_ __ | | __ _ _   _ 
+  | |/ _ \| __/ _` | | '_ \| |/ _` | | | |
+  | | (_) | || (_| | | |_) | | (_| | |_| |
+  \_/\___/ \__\__,_|_| .__/|_|\__,_|\__, |
+                     | |             __/ |
+                     |_|            |___/ 
+
+
+Poweder by Emmanuel Ramírez
+
+
+*/
+
+
+/*-----------------------------*\
+*
+*    * Estilos del Template *
+* 
+* Estilos Base ___________ @Base
+* Etiquetas ______________ @Etiquetas
+* Header _________________ @Header
+* Estilos Slider _________ @Slider
+* Logotipo _______________ @Logo
+* Menú Principal _________ @Principal
+* Menú Secundario ________ @Secundario
+* Buscador _______________ @Búsqueda
+* Contenido ______________ @Contenido
+* Footer _________________ @Footer
+*    
+\*-----------------------------*/
+
+
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Base *
+\*==========================================================================*/
+
+// Importados de la carpeta template/base
+
+
+@import 'base/reset';
+@import 'base/variables';
+
+
+
+
+/*==========================================================================*\
+    * Estilos de @Etiquetas *
+\*==========================================================================*/
+
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 300;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+img{
+	max-width:100%;
+	display:block;
+}
+
+
+.clearfix{
+	clear:both;
+}
+
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Header *
+\*==========================================================================*/
+
+.header{
+	margin-bottom: 1rem;
+	padding: 1rem;
+	position: relative;
+	z-index: 15;
+
+	@extend .deg_negro;
+	@include centrado(1060px);
+
+
+	/*====| MediaQuerie Header 600px |====*/
+
+	@media screen and(min-width:600px){
+		padding-bottom: 0;
+	}
+
+	/*====| MediaQuerie Header 768px |====*/
+
+	@media screen and(min-width:768px){
+		margin-top: 1rem;
+		padding: 0 2rem;
+	}
+
+}
+
+
+/*==========================================================================*\
+    * Estilos @Slider *
+\*==========================================================================*/
+
+.slider{
+	@include centrado(960px);	
+
+	img{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.bxslider{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/*==========================================================================*\
+    * Estilos @Logo *
+\*==========================================================================*/
+
+
+.logo{
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 2001;
+	img{
+		width: 40%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	/*====| Logo al hacer scroll |====*/
+
+	&.mini{
+		box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+		@extend .deg_negro;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
+		@extend .trans_all;
+
+		img{
+			height: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: auto ;
+
+		}
+
+		.menu__mobile{
+			font-size: 20px;
+			top: 1rem;
+			right: 1.5rem;
+
+		}
+		
+	}
+
+	/*====| MediaQuerie Logo 600px |====*/
+
+	@media screen and(min-width:600px){
+		background: transparent;
+		width: 20%;
+
+		img{
+			width: auto;
+		}
+	}
+
+	/*====| MediaQuerie Logo 768px |====*/
+
+	@media screen and(min-width:768px){
+		margin: 0;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 1rem;
+	}
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================================*\
+    * Menú @Principal *
+\*==========================================================================*/
+
+.menu{
+
+
+	&__principal{
+		min-height: 100vh;
+		height: 100vh;
+		overflow: auto;
+		left: -100%;
+		position: fixed;
+		top: 0;
+		width: 70%;
+		padding-top: 4rem;
+		font-size: 90%;
+		z-index: 10;
+		@extend .trans_all_1;
+		@extend .deg_negro;
+		
+		.titulo-menu h2{
+			color: $blanco;
+			margin: 0;
+			font-weight: 300;
+			padding-left: 1rem;
+		}
+
+			ul{
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			li{
+				
+				border-bottom: 1px solid #1f1f1f;
+				@extend .trans_all_2;
+				margin-left: 2rem;
+				opacity: 0;
+				position: relative;
+
+				&:hover,
+				&.active{
+					@extend .deg_azul;
+				}
+
+				&.menu__item--empresarios{
+	
+					&:hover,
+					&.active{
+						@extend .deg_verde;
+					}
+
+					&.especial:hover{
+						@extend .deg_azul;
+					}
+				}
+
+
+				/*====| MediaQuerie Menú Principal 600px |====*/
+
+				@media screen and(min-width:600px){
+					margin-left: 0;
+					opacity: 1;
+	
+					&::before{
+						/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e0e0e+0,7d7e7d+50,0e0e0e+100 */
+						background: rgb(14,14,14); /* Old browsers */
+						background: -moz-linear-gradient(top,  rgba(14,14,14,1) 0%, rgba(125,126,125,1) 50%, rgba(14,14,14,1) 100%); /* FF3.6-15 */
+						background: -webkit-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 50%,rgba(14,14,14,1) 100%); /* Chrome10-25,Safari5.1-6 */
+						background: linear-gradient(to bottom,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 50%,rgba(14,14,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+						content: '';
+						height: 100%;
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 1px;
+					}
+				}
+				a{
+					color:$blanco;
+					display: block;
+					width: 100%;
+					padding: .6rem 1rem;
+					position: relative;
+
+				}
+
+		}
+
+	/*====| Menú Principal Especial |====*/
+
+		&--especial{
+
+			ul{
+				li{
+					&:hover{
+						@extend .deg_verde;
+					}					
+				}
+			}
+
+			/*====| MediaQuerie Menú Principal Especial 600px |====*/
+
+			@media screen and(min-width:600px){
+				ul{
+					width: 400px;
+					margin: 0 auto;				
+				}
+			}
+
+			/*====| MediaQuerie Menú Principal Especial 768px |====*/
+
+			@media screen and(min-width:768px){
+				ul{
+					margin-left: auto;
+					margin-right: 0;
+				}
+			}
+
+		}
+
+	/*====| Menú principal móvil |====*/
+
+		&.is-show{
+			left: -2px;
+
+			li{
+				opacity: 1;
+				margin: 0;
+				&:nth-child(1){
+					-webkit-transition-delay: 0s;
+					-moz-transition-delay: 0s;
+					-ms-transition-delay: 0s;
+					-o-transition-delay: 0s;
+					transition-delay: 0s;
+				}
+				&:nth-child(2){
+					-webkit-transition-delay: 50ms;
+					-moz-transition-delay: 50ms;
+					-ms-transition-delay: 50ms;
+					-o-transition-delay: 50ms;
+					transition-delay: 50ms;
+				}
+				&:nth-child(3){
+					-webkit-transition-delay: 100ms;
+					-moz-transition-delay: 100ms;
+					-ms-transition-delay: 100ms;
+					-o-transition-delay: 100ms;
+					transition-delay: 100ms;
+				}
+				&:nth-child(4){
+					-webkit-transition-delay: 150ms;
+					-moz-transition-delay: 150ms;
+					-ms-transition-delay: 150ms;
+					-o-transition-delay: 150ms;
+					transition-delay: 150ms;
+				}
+				&:nth-child(5){
+					-webkit-transition-delay: 200ms;
+					-moz-transition-delay: 200ms;
+					-ms-transition-delay: 200ms;
+					-o-transition-delay: 200ms;
+					transition-delay: 200ms;
+				}
+				&:nth-child(6){
+					-webkit-transition-delay: 250ms;
+					-moz-transition-delay: 250ms;
+					-ms-transition-delay: 250ms;
+					-o-transition-delay: 250ms;
+					transition-delay: 250ms;
+				}
+				&:nth-child(7){
+					-webkit-transition-delay: 300ms;
+					-moz-transition-delay: 300ms;
+					-ms-transition-delay: 300ms;
+					-o-transition-delay: 300ms;
+					transition-delay: 300ms;
+				}
+			}
+		}
+
+
+	/*====| MediaQuerie Menú Principal 600px |====*/
+
+	@media screen and(min-width:600px){
+		position: relative;
+		left: auto;
+		width: 100%;
+		padding-top: 0;
+		height: auto;
+		min-height: initial;
+		text-align: center;
+		box-shadow: none;
+		-ms-align-items: center;
+		align-items: center;
+		background: transparent;
+
+
+		.titulo-menu{
+			display: none;
+		}
+
+		ul{
+			margin-top: 1rem;
+			text-align: center;
+
+			@include flexbox-display-flex;
+
+			li{
+				border: 0;
+				width: 14%;
+				
+				-webkit-flex-flow: row wrap;
+				-moz-flex-flow: row wrap;
+				-ms-flex-flow: row wrap;
+				-o-flex-flow: row wrap;
+				flex-flow: row wrap;
+
+				-ms-align-items: center;
+				align-items: center;
+
+				@include flexbox-grow(1);
+				@include flexbox-basis(0);
+				@include flexbox-display-flex;
+
+
+				&:nth-of-type(n+3){
+
+					@-moz-document url-prefix(){
+						a{
+							padding-top: 1.5rem;
+						}
+					}
+				}
+
+				a{
+					padding: 1rem .3rem;
+					height: 100%;
+
+				}
+			}
+		}
+	}
+
+	/*====| MediaQuerie Menú Principal 768px |====*/
+
+	@media screen and(min-width:768px){
+		margin-top: 0;
+		display: inline-block;
+		vertical-align: middle;
+		width: 79%;
+
+		ul{
+			margin-top: 0;
+		}
+	}
+
+
+	}
+
+	/*====| Menú móvil |====*/
+
+	&__mobile{
+		position: absolute;
+		right: .5rem;
+		top: .2rem;
+		width: 1.5rem;
+		height: 1.2rem;
+		display: block;
+	
+		span{
+			display: block;
+			background-color: $blanco;
+			height: 2px;
+			width: 100%;
+			@extend .trans_all_1;
+
+
+			&::before,
+			&::after{
+				content: '';
+				height: 2px;
+				width: 100%;
+				background-color: $blanco;
+				display: block;
+				position: absolute;
+				@extend .trans_all_1;
+			}
+
+			&::before{
+				top: 9px;
+			}
+
+			&::after{
+				bottom: 0;
+			}
+			
+			/*====| MediaQuerie Menú Mobile 600px |====*/
+
+			@media screen and(min-width:600px){
+				display: none;
+			}
+		}
+
+		/*====| Cerrar Menú |====*/
+		
+		&.close{
+
+			span{
+				background-color: transparent;
+				@extend .trans_all_1;
+
+				&::before{
+					-webkit-transform: rotate(45deg) translate3d(0,0,0);
+					transform: rotate(45deg) translate3d(0,0,0);
+					-webkit-transform-origin: center;
+					transform-origin: center;
+					top: 8px;
+					@extend .trans_all_1;
+				}
+
+				&::after{
+					-webkit-transform: rotate(-45deg) translate3d(0,0,0);
+					transform: rotate(-45deg) translate3d(0,0,0);
+					-webkit-transform-origin: center;
+					transform-origin: center;
+					bottom: 9px;
+					@extend .trans_all_1;
+					
+					}
+			}
+			
+		}
+	}
+	
+}
+
+
+	
+
+
+
+/*==========================================================================*\
+    * Menú @Secundario *
+\*==========================================================================*/
+
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+.menu{
+
+	&__wrap{
+		@include centrado(960px);
+	}
+	
+	&__secundario{
+		padding: 0;
+		margin: 0 auto 0 1rem;
+		list-style-type: none;
+		min-width: 635px;
+		text-align: center;
+
+
+		li{
+			display: inline-block;
+			vertical-align: bottom;
+			width: 60px;
+			height: 45px;
+			text-align: center;
+			a{
+				background-image: url('../images/submenu-doble-nov.png');
+				background-repeat: no-repeat;
+				background-size: 100px auto;
+				color:#a0a0a0;
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				font: bold 8px/1em Arial;
+				letter-spacing: .03em;
+				min-width: 55px;
+				padding-top: 38px;
+				text-align: center;
+				text-transform: uppercase;
+				text-rendering: optimizeLegibility;
+				transition: none;
+				white-space: nowrap;
+
+
+			}
+
+			&:first-child{
+				a{
+					background-position: center -25px;
+				}
+			}
+			&:nth-child(2){
+				a{
+					background-position: center -470px;
+				}
+			}
+			&:nth-child(3){
+				a{
+					background-position: center -75px;
+				}
+			}
+			&:nth-child(4){
+				a{
+					background-position: center -125px;
+				}
+			}
+			&:nth-child(5){
+				a{
+					background-position: center -176px;
+				}
+			}
+			&:nth-child(6){
+				a{
+					background-position: center -224px;
+				}
+			}
+			&:nth-child(7){
+				a{
+					background-position: center -275px;
+				}
+			}
+			&:nth-child(8){
+				a{
+					background-position: center -325px;
+				}
+			}
+			&:nth-child(9){
+				a{
+					background-position: center -375px;
+				}
+			}
+			&:nth-child(10){
+				a{
+					background-position: center -422px;
+				}
+			
+			}
+
+
+		}
+		/*====| MediaQuerie Menú Secundario 960px |====*/
+	
+		@media screen and(min-width:960px){
+			width: 100%;
+			@include flexbox-display-flex;
+
+
+			li{
+				width: auto;
+				@include flexbox-grow(1);
+				@include flexbox-basis(0);
+
+				a{
+					br{
+						display: none;
+					}
+				}
+			}
+		}
+
+		/*====| Contenedor menú Secundario |====*/
+
+		&--wrap{
+			margin: 0 auto;
+			overflow-x: auto;
+			padding-bottom: 1rem;
+			width: 100%;
+
+			/*====| MediaQuerie Contenedor menú Secundario 960px |====*/
+
+			@media screen and(min-width:960px){
+				width: 79%;
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0;	
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+
+
+
+/*==========================================================================*\
+    * @Búsqueda de Google *
+\*==========================================================================*/
+
+
+
+.busqueda-google{
+	border: solid 2px #cbcbcb;
+	border-radius: 10px;
+	height: 33px !important;
+	overflow: hidden;
+	padding: 2px 4px;
+	width: 90%;
+	margin: 1rem auto;
+
+	div{
+
+		height:  100%;
+
+		.gsc-search-box{
+
+			padding: 0;
+			height: 19px;
+		}
+		.gsc-search-button{
+
+			border: none;
+			color: transparent;
+			background-color: #fff;
+			background-image: url('../images/icons/lupita.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			padding: 0;
+			width: 12px;
+		}
+	}
+
+		/*====| MediaQuerie Búscador 960px |====*/
+
+		@media screen and(min-width:960px){
+			width: 20%;
+			display: inline-block;
+			vertical-align: middle;
+			margin-top: 0;
+		}
+
+}
+
+
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Contenido *
+\*==========================================================================*/
+
+.page-title{
+	text-align: center;
+	
+	h1{
+		font-size: 35px;
+		font-weight: 400;
+		color: #646465;
+		margin-bottom: 23px;
+		text-shadow: 0 0 5px #fff,0 0 4px #666;
+
+		span{
+			font-size: 36px;
+			text-shadow: 0 0 5px #fff,0 0 5px #020202;
+			-webkit-text-fill-color: #646464;
+			-webkit-text-stroke-width: .02em;
+			-webkit-text-stroke-color: white;
+			-moz-text-fill-color: #646464;
+			-moz-text-stroke-width: .02em;
+			-moz-text-stroke-color: white;
+			text-fill-color: #646464;
+			text-stroke-width: .02em;
+			text-stroke-color: white;
+			color: #525252;
+		}
+
+	}
+
+	h2{
+		font-size: 20px;
+		font-weight: 400;
+		color: #888;
+		margin: 0 auto 34px;
+
+		@include centrado(960px);
+	}
+}
+
+    // Aquí se importan los estilos de cada sección,
+    // Son independientes al Template
+
+
+
+/*====| Estilos Slider |====*/
+
+@import 'theme/slider';
+
+/*====| Estilos Home |====*/
+
+@import 'home/style';
+
+/*====| Estilos Empresarios |====*/
+
+@import 'empresarios/style';
+
+/*====| Estilos Internet |====*/
+
+@import 'internet/style';
+
+/*====| Estilos Televisión |====*/
+
+@import 'television/style';
+
+/*====| Estilos Telefonía |====*/
+
+@import 'telefonia/style';
+
+/*====| Estilos VOD |====*/
+
+@import 'vod/style';
+
+/*====| Estilos Ayuda |====*/
+
+@import 'ayuda/style';
+
+/*====| Estilos Totalplay |====*/
+
+@import 'totalplay/style';
+
+/*====| Estilos Contrata |====*/
+
+@import 'contrata/style';
+
+/*====| Estilos Promociones |====*/
+
+@import 'promociones/style';
+
+/*====| Estilos Estado de cuenta |====*/
+
+@import 'estado-de-cuenta/style';
+
+/*====| Estilos Distribuidores |====*/
+
+@import 'distribuidores/style';
+
+/*====| Estilos Info Corporativa |====*/
+
+@import 'info-corporativa/style';
+
+/*====| Estilos Canales |====*/
+
+@import 'canales/style';
+
+/*====| Estilos Paquetes |====*/
+
+@import 'paquetes/style';
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Footer *
+\*==========================================================================*/
+
+
+.footer{
+
+	&__wrap{
+
+		padding: 1rem;
+		@include centrado(960px);
+	}
+
+	&__principal{
+		background-color: $negro;
+		color: $blanco;
+		text-align: center;
+		padding-bottom: 3rem;
+
+
+		h2,
+		h3{
+			margin-top: 0;
+			margin-bottom: .5rem;
+			font-weight: 400;
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+
+		/*====| MediaQuerie Footer Principal 600px |====*/
+	
+		@media screen and(min-width:600px){
+
+			padding-bottom: 0;
+			text-align: left;
+		}
+
+	}
+
+	/*====| MediaQuerie Footer wrap 600px |====*/
+
+	@media screen and(min-width:600px){
+
+		&__wrap{	
+			@include flexbox-display-flex;
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+	}
+
+	/*====| Columna Izquierda Footer |====*/
+
+	&__izquierdo{
+		font-size: 80%;
+
+		&--item{
+			margin-bottom: 1rem;
+
+			ul{
+				display: inline-block;
+				vertical-align: top;
+				text-align: left;
+				margin-bottom: 1rem;
+				&:first-of-type{
+					margin-right: 1.5rem;
+				}
+				/*====| MediaQuerie Lista Secciones 600px|====*/
+			
+				@media screen and(min-width:600px){
+					font-size: 10px;
+					line-height: 12px;
+	
+					&:first-of-type{
+						margin-right: .3rem;
+					}
+				}
+				
+				/*====| MediaQuerie Lista Secciones 768px |====*/
+				
+				@media screen and(min-width:768px){
+	
+					&:first-of-type{
+						margin-right: 1.5rem;
+					}
+
+					li{
+						margin: .2rem;
+					}
+				}
+
+			}
+
+		}
+
+		/*====| MediaQuerie Columna Izquierda Footer 600px |====*/
+
+	
+		@media screen and(min-width:600px){
+
+			width: 50%;
+
+			@include flexbox-display-flex;
+
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+
+			&--caja1{
+				width: 50%;
+				order:2;
+			}
+			&--caja2{
+				width: 50%;
+				order:1;
+			}
+
+			&--caja3{
+				-webkit-flex: 1 100%;
+				-moz-flex: 1 100%;
+				-ms-flex: 1 100%;
+				-o-flex: 1 100%;
+				flex: 1 100%;
+				order:3;
+			}
+		}
+
+		/*====| MediaQuerie Columna Izquierda Footer 768px |====*/
+
+		@media screen and(min-width:768px){
+			font-size: 100%;
+		}
+
+
+		&--caja1{
+			span{
+				display: block;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+			.mostrar-tel{
+				a{				
+					display: block;
+					padding: 1rem;
+					background-color: $azul;
+					border-radius: 8px;
+					margin-top: .5rem;
+					margin-bottom: .5rem;
+				}
+			}
+
+			.ocultar-tel{
+				color: $azul;
+				display: none;
+				text-align: center;
+
+				p{
+					margin: 0;
+					font-size: 1.5rem;
+				}
+			}
+
+			/*====| MediaQuerie Footer .caja1 600px |====*/
+		
+			@media screen and(min-width:600px){
+
+				display: inline-block;
+				vertical-align: top;
+				width: 48%;
+
+				.mostrar-tel{
+					display: none;
+				}
+				.ocultar-tel{	
+						display: block;
+					}
+				
+			}
+
+		}
+
+		&--caja2{
+
+			/*====| MediaQuerie Footer .caja2 600px |====*/
+			
+			@media screen and(min-width:600px){
+
+				display: inline-block;
+				vertical-align: top;
+				width: 48%;
+			}			
+		}
+	
+
+		&--caja3{
+
+			font-size: 9px;
+			line-height: 12px;
+			a{
+				color: $azul;
+			}
+		}
+	}
+
+	/*====| Columna Derecha Footer |====*/
+	
+	&__derecho{
+		p a{
+			color: $azul;
+
+		}
+
+		form{
+			width: 100%;
+
+			.input-footer{
+				width: 100%;
+				margin: .3rem;
+				border-radius:5px ;
+				border: 0;
+				padding: .3rem;
+				color: $negro;
+				font-size: .9rem;
+				line-height: 1.1rem;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+			}
+
+			.enviar button{
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				display: block;
+				padding: 1rem;
+				background-color: $azul;
+				border-radius: 8px;
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				width: 100%;
+				border:0;		
+			}
+		}
+		/*====| MediaQuerie Formulario Footer 600px|====*/
+	
+		@media screen and(min-width:600px){
+			width: 50%;
+
+			form{
+
+				.input-footer{
+					width: 45%;
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
+		}
+
+		/*====| MediaQuerie Formulario Footer 768px|====*/
+
+		@media screen and(min-width:768px){
+			-webkit-order: 2;
+			-moz-order: 2;
+			-ms-order: 2;
+			-o-order: 2;
+			order: 2;
+
+		}
+
+		/*====| MediaQuerie Formulario Footer 960px|====*/
+
+		@media screen and(min-width:960px){
+			form{
+
+				.input-footer{
+
+					width: 48.5%;
+					margin-right: 0;
+					
+					&:nth-child(n+3){
+						width: 23%;
+					}
+
+					&:nth-child(7){
+						width: 48%;
+					}
+				}
+			}
+		}
+
+	}
+
+
+
+
+	&__empresarios{
+		.ocultar-tel{
+			color: #c2d001;
+		}
+
+		.enviar button.enviar-footer-form{
+			background-color: #c2d001;
+		}
+	}
+
+}

@@ -1,0 +1,148 @@
+.internet{
+	@include centrado(960px);
+
+	@extend .sombra-top;
+
+	&__item{
+
+		@extend .sombra-top;
+
+			max-width: 80%;
+			margin: 3rem auto;
+
+			&--imagen{
+				img{
+					display: block;
+					margin-right:auto;
+					margin-left: auto;
+				}
+			}
+
+			&--info{
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 19px;
+				text-align: center;
+
+				h2{
+					font-size: 26px;
+					font-weight: 400;
+					margin-bottom: 15px;
+					margin-top: 0;
+				}
+
+				span{
+					color: #525252;
+					font-size: 13px;
+					font-weight: 700;
+				}
+
+			}
+		/*====| MediaQuerie internet__item 600px |====*/
+
+		@media screen and(min-width:768px){
+			max-width: 100%;
+
+			@include flexbox-display-flex;
+
+			div {
+				position: relative;
+				width: 50%;
+			}
+
+			&--descargas{
+				margin-top: 6rem;
+			}
+
+			&--info{
+				text-align: left;
+			}
+
+			&.reverse{
+				-webkit-flex-wrap: wrap;
+				-moz-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				-o-flex-wrap: wrap;
+				flex-wrap: wrap;
+				
+				-webkit-flex-direction: row-reverse;
+				-moz-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				-o-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+
+				aside{
+
+				margin-right: 0;
+				margin-left: auto;
+				text-align: right;				
+				}
+
+
+				figure{
+
+				margin-left: 2rem;
+				margin-right: auto;
+				}
+			
+			}
+
+			&--imagen{
+				width: 70%;
+				margin-right:2rem;
+				margin-left: auto;
+
+				&.descargas__item--imagen,
+				&.subida__item--imagen{
+
+					img{
+						position: absolute;
+						top: -4rem;
+						width: 72%;
+					}
+				}
+	
+			}
+
+
+			&--info{
+				width: 70%;
+				margin-right:auto;
+				margin-left: 0;
+			}
+
+		}	
+
+	}
+}
+
+.descargas{
+	&__item{
+		&--boton{
+			background-image: url('/tp/internet/images/withe-arrow-right.png');
+			background-position: 93% center;
+			background-repeat: no-repeat;
+			color: #fff;
+			background-color: #e40278;
+			color: $blanco;
+			display: block;
+			padding: .5rem 3em .5rem .5rem;
+			text-align: center;
+			text-align: center;
+			width: 180px;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 12px;
+			line-height: 16px;
+
+		/*====| MediaQuerie internet__item 768px |====*/
+
+		@media screen and(min-width:768px){
+			margin-right: auto;
+			margin-left: 0;
+		}
+
+		}
+
+	}
+}

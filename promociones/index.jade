@@ -1,0 +1,162 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA PROMOCIONES TOTALPLAY
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Promociones"
+	- var currentUrl = "/promociones"
+	- var favicon = "images/favicon.ico"
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "slider-1.png"
+	- var alt = "Promociones Totalplay"
+
+	- var values = [];
+
+
+
+
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+
+		h2 Conoce las sorpresas que tenemos para ti, aprovéchalas y no te quedes fuera.
+	
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	section.promociones
+
+		//- Promo Básico
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/promo-basico.jpg", alt="PROMOCIÓN MARZO 2016")
+			.promociones__item--info
+				h2 PROMOCIÓN MARZO 2016
+					span CONTRATA HOY Y AHORRA $60 DURANTE 4 MESES.
+				h3 PAQUETE BÁSICO
+				.promociones__item--info-terminos
+					p PROMOCIÓN VÁLIDA DEL 1 AL 31 DE MARZO DE 2016, APLICA PARA LAS NUEVAS CONTRATACIONES Y TODAS LAS ZONAS CON COBERTURA TOTALPLAY. EL PLAN TRIPLEPLAY BÁSICO RECIBIRÁ UN DESCUENTO DE $60 SOBRE EL PRECIO DE LISTA O PRONTO PAGO DURANTE 4 MESES. SE APLICARÁ A PARTIR DE QUE RECIBA SU PRIMER ESTADO DE CUENTA, APLICA ÚNICAMENTE A LA RENTA DEL PLAN Y NO A LOS SERVICIOS ADICIONALES O RENTA DE PELÍCULAS. AL TERMINAR EL PLAZO, SE DEBERÁ DE PAGAR LA RENTA MENSUAL CON EL PRECIO REGULAR DEL PLAN CONTRATADO, EL PAGO DE LA PRIMERA RENTA AL MOMENTO DE LA INSTALACIÓN SE DEBERÁ DE REALIZAR SIN DESCUENTO ALGUNO.
+				a.terminos-js(href="") Términos
+
+		//- Doble Velocidad
+
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/doble-velocidad.jpg", alt="PRIMAVERA CONECTADA")
+			.promociones__item--info
+				h2 PRIMAVERA CONECTADA
+					span MÁS CANALES Y HASTA EL DOBLE DE VELOCIDAD DE INTERNET
+				h3 PAQUETES TRIPLEPLAY Y DOBLEPLAY
+				.promociones__item--info-terminos
+					p PROMOCIÓN VÁLIDA DEL 1 AL 31 DE MARZO DE 2016, APLICA PARA LAS NUEVAS CONTRATACIONES Y TODAS LAS ZONAS CON COBERTURA TOTALPLAY. LOS PLANES TRIPLEPLAY: PRÁCTICO, FAMILIAR Y TOTAL RECIBIRÁN LA PARRILLA DE CANALES Y VELOCIDAD DE INTERNET DEL PLAN INMEDIATO SUPERIOR DURANTE 4 MESES, AL TERMINAR EL PLAZO SE REGRESARÁ A LA VELOCIDAD Y PARRILLA CONTRATADA. LOS PLANES DOBLEPLAY: PRÁCTICO, FAMILIAR Y TOTAL RECIBIRÁN LA VELOCIDAD DE INTERNET DEL PLAN INMEDIATO SUPERIOR DURANTE 4 MESES, AL TERMINAR EL PLAZO SE REGRESARÁ A LA VELOCIDAD CONTRATADA. EL AUMENTO DE PROGRAMACIÓN Y ANCHO DE BANDA QUEDARÁ ACTIVO EN LOS PRIMEROS 5 DÍAS HÁBILES DESPUÉS DE LA INSTALACIÓN.
+				a.terminos-js(href="") Términos
+
+		//- Llévate mas canales
+
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/canales.jpg", alt="PRIMAVERA CONECTADA")
+			.promociones__item--info
+				h2 PRIMAVERA CONECTADA
+					span MÁS CANALES Y HASTA EL DOBLE DE VELOCIDAD DE INTERNET
+				h3 PAQUETES TRIPLEPLAY Y DOBLEPLAY
+				.promociones__item--info-terminos
+					p PROMOCIÓN VÁLIDA DEL 1 AL 31 DE MARZO DE 2016, APLICA PARA LAS NUEVAS CONTRATACIONES Y TODAS LAS ZONAS CON COBERTURA TOTALPLAY. LOS PLANES TRIPLEPLAY: PRÁCTICO, FAMILIAR Y TOTAL RECIBIRÁN LA PARRILLA DE CANALES Y VELOCIDAD DE INTERNET DEL PLAN INMEDIATO SUPERIOR DURANTE 4 MESES, AL TERMINAR EL PLAZO SE REGRESARÁ A LA VELOCIDAD Y PARRILLA CONTRATADA. LOS PLANES DOBLEPLAY: PRÁCTICO, FAMILIAR Y TOTAL RECIBIRÁN LA VELOCIDAD DE INTERNET DEL PLAN INMEDIATO SUPERIOR DURANTE 4 MESES, AL TERMINAR EL PLAZO SE REGRESARÁ A LA VELOCIDAD CONTRATADA. EL AUMENTO DE PROGRAMACIÓN Y ANCHO DE BANDA QUEDARÁ ACTIVO EN LOS PRIMEROS 5 DÍAS HÁBILES DESPUÉS DE LA INSTALACIÓN.
+				a.terminos-js(href="") Términos
+
+		//- HBO max
+
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/hbo-max.jpg", alt="CONTRATA HBO MAX")
+			.promociones__item--info
+				h2 CONTRATA HBO MAX
+					span CON 50% DE DESCUENTO
+				h3 PAQUETES TRIPLEPLAY
+				.promociones__item--info-terminos
+					p PROMOCIÓN VÁLIDA DEL 1 AL 31 DE MARZO DE 2016, APLICA PARA NUEVAS CONTRATACIONES Y CLIENTES ACTUALES. AL CONTRATAR EL PAQUETE HBO MAX OBTENDRÁS 1 MES GRÁTIS Y 2 MESES MÁS CON 50% DE DESCUENTO. EL DESCUENTO SE APLICARÁ A PARTIR DE QUE RECIBA SU PRIMER ESTADO DE CUENTA, AL TERMINAR EL PLAZO, SE DEBERÁ PAGAR EL PAQUETE A PRECIO DE LISTA. APLICA PLANES TRIPLEPLAY: BÁSICO, PRÁCTICO, FAMILIAR Y TOTAL.
+				a.terminos-js(href="") Términos
+
+		//- Deezer
+
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/promociones-deezer-3meses.jpg", alt="TU MÚSICA FAVORITA CON DEEZER")
+			.promociones__item--info
+				h2 TU MÚSICA FAVORITA CON DEEZER
+					span 3 MESES GRATIS
+				a(href="http://www.totalplay.com.mx/deezer/" target="_blank") Términos
+
+		//- Donde Sea
+		.promociones__item
+			.promociones__item--imagen
+				img(src="images/promocion-donde-sea-01.jpg", alt="TU PROGRAMACIÓN FAVORITA DONDE SEA")
+			.promociones__item--info
+				h2 TU PROGRAMACIÓN FAVORITA DONDE SEA
+					span ¡DESCARGA LA APP GRATIS!
+				.promociones__item--info-terminos
+					p MÁXIMO 3 DISPOSITIVOS MÓVILES POR CUENTA. LAS PELÍCULAS, SERIES O PROGRAMAS DE TELEVISIÓN QUE ESTÁN DISPONIBLES EN LA APLICACIÓN, PUEDEN VARIAR FUERA DE LA RED WIFI DE TOTALPLAY. LAS PELÍCULAS RENTADAS EN VIDEO ON DEMAND GENERARÁN UN COSTO ADICIONAL AL PAQUETE CONTRATADO. CONECTADOS A LA RED WIFI DE TOTALPLAY TODOS LOS DISPOSITIVOS GOZARÁN DEL MISMO CONTENIDO CONTRATADO, SI SE CONECTAN A OTRA RED TENDRÁN ACCESO A MENOR PROGRAMACIÓN. PARA DISFRUTAR DE LA PROGRAMACIÓN EN LA APLICACIÓN MÓVIL DEBERÁS SER CLIENTE DE TOTALPLAY Y ESTAR AL CORRIENTE EN TUS PAGOS.
+				a.terminos-js(href="") Términos
+

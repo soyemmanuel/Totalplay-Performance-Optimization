@@ -1,0 +1,423 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+
+block metatags
+
+	- var Pagetitle = "Paquetes - Totalplay"
+	- var currentUrl = "/paquetes"
+	- var favicon = "images/favicon.ico"
+
+
+
+
+block listaLugares
+
+
+	- var lugares = [];
+	- lugares.push ({nombre:'Aguascalientes', enlace:'aguascalientes'})
+	- lugares.push ({nombre:'Cancún', enlace:'cancun'})
+	- lugares.push ({nombre:'Celaya', enlace:'celaya'})
+	- lugares.push ({nombre:'Cd. Juárez', enlace:'cd-Juarez'})
+	- lugares.push ({nombre:'Chihuahua', enlace:'chihuahua'})
+	- lugares.push ({nombre:'Cuernavaca', enlace:'cuernavaca'})
+	- lugares.push ({nombre:'Distrito Federal', enlace:'distrito-federal'})
+	- lugares.push ({nombre:'Guadalajara', enlace:'guadalajara'})
+	- lugares.push ({nombre:'León', enlace:'leon'})
+	- lugares.push ({nombre:'Mérida', enlace:'merida'})
+	- lugares.push ({nombre:'Monterrey', enlace:'monterrey'})
+	- lugares.push ({nombre:'Morelia', enlace:'morelia'})
+	- lugares.push ({nombre:'Pachuca', enlace:'pachuca'})
+	- lugares.push ({nombre:'Puebla', enlace:'puebla'})
+	- lugares.push ({nombre:'Querétaro', enlace:'queretaro'})
+	- lugares.push ({nombre:'San Luis Potosí', enlace:'san-luis-potosi'})
+	- lugares.push ({nombre:'Tijuana', enlace:'tijuana'})
+	- lugares.push ({nombre:'Toluca', enlace:'toluca'})
+	- lugares.push ({nombre:'Veracruz', enlace:'veracruz'})
+	- lugares.push ({nombre:'Xalapa', enlace:'xalapa'})
+
+block handlebars
+
+	script(id="botones-paquetes" type="x-handlebars-template").
+
+		<aside class="paquetes__botones">
+			<div class="paquetes__botones--contenedor contenedor-botones">
+				<a href="{{tripleplay}}" class="paquetes__botones--link" title="tripleplay">TRIPLEPLAY
+					<img src="images/botones/tripleplay.png" alt="Tripeplay"/>
+				</a>
+				<a href="{{dobleplay}}" class="paquetes__botones--link" title="dobleplay">DOBLEPLAY
+					<img src="images/botones/dobleplay.png" alt="Dobleplay"/>
+				</a>
+			</div>
+		</aside>
+
+	script(id="lista-paquetes" type="x-handlebars-template").
+		<article class="paquetes__lista--item">
+
+			<div class="paquetes__lista--info">
+
+				<aside class="paquetes__lista--info-titulo">
+					<h3>Esencial</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-contenido info__contenido">
+
+					<div class="info__contenido--item">
+						<img src="images/10e.png" alt="10 mb"/>
+						<strong>Mbps</strong>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>70</strong> Canales 1</p>
+						<p><strong>20</strong> Canales HD</p>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>Sin Límite</strong> 3</p>
+						<p>Incluye: 1 Línea</p>
+					</div>
+
+					<div class="info__contenido--item"><strong><span>$569*</span></strong>
+						<p>Pronto Pago</p>
+					</div>
+
+				</div>
+
+			</div>
+		  
+
+			<div class="paquetes__lista--detalles">
+
+				<aside class="paquetes__lista--detalles--info-titulo paquetes__titulo-js">
+					<h3>Detalles</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-detalles info__detalles">
+
+					<div class="info__detalles--item">
+						<p><i>1 TV</i></p>
+						<p>Incluye:AnytimeTv Regresa tu programación sin costo extra</p>
+						<p><strong>Video On Demand</strong></p>
+						<p><strong><span>SVOD DISPONIBLE por $99 adicionales</span></strong></p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>Sin Límite 3</p>
+						<p>Llamadas a teléfonos fijos y larga distancia internacional (EUA y Canadá)</p>
+						<p>300 minutos a celular nacional 4</p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>$619</p>
+						<p>Precio de lista</p>
+						<p>* Consulta términos y condiciones</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</article>
+
+		<article class="paquetes__lista--item">
+
+			<div class="paquetes__lista--info">
+
+				<aside class="paquetes__lista--info-titulo">
+					<h3>Esencial</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-contenido info__contenido">
+
+					<div class="info__contenido--item">
+						<img src="images/10e.png" alt="10 mb"/>
+						<strong>Mbps</strong>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>70</strong> Canales 1</p>
+						<p><strong>20</strong> Canales HD</p>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>Sin Límite</strong> 3</p>
+						<p>Incluye: 1 Línea</p>
+					</div>
+
+					<div class="info__contenido--item"><strong><span>$569*</span></strong>
+						<p>Pronto Pago</p>
+					</div>
+
+				</div>
+
+			</div>
+		  
+
+			<div class="paquetes__lista--detalles">
+
+				<aside class="paquetes__lista--detalles--info-titulo paquetes__titulo-js">
+					<h3>Detalles</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-detalles info__detalles">
+
+					<div class="info__detalles--item">
+						<p><i>1 TV</i></p>
+						<p>Incluye:AnytimeTv Regresa tu programación sin costo extra</p>
+						<p><strong>Video On Demand</strong></p>
+						<p><strong><span>SVOD DISPONIBLE por $99 adicionales</span></strong></p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>Sin Límite 3</p>
+						<p>Llamadas a teléfonos fijos y larga distancia internacional (EUA y Canadá)</p>
+						<p>300 minutos a celular nacional 4</p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>$619</p>
+						<p>Precio de lista</p>
+						<p>* Consulta términos y condiciones</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</article>
+
+		<article class="paquetes__lista--item">
+
+			<div class="paquetes__lista--info">
+
+				<aside class="paquetes__lista--info-titulo">
+					<h3>Esencial</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-contenido info__contenido">
+
+					<div class="info__contenido--item">
+						<img src="images/10e.png" alt="10 mb"/>
+						<strong>Mbps</strong>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>70</strong> Canales 1</p>
+						<p><strong>20</strong> Canales HD</p>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>Sin Límite</strong> 3</p>
+						<p>Incluye: 1 Línea</p>
+					</div>
+
+					<div class="info__contenido--item"><strong><span>$569*</span></strong>
+						<p>Pronto Pago</p>
+					</div>
+
+				</div>
+
+			</div>
+		  
+
+			<div class="paquetes__lista--detalles">
+
+				<aside class="paquetes__lista--detalles--info-titulo paquetes__titulo-js">
+					<h3>Detalles</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-detalles info__detalles">
+
+					<div class="info__detalles--item">
+						<p><i>1 TV</i></p>
+						<p>Incluye:AnytimeTv Regresa tu programación sin costo extra</p>
+						<p><strong>Video On Demand</strong></p>
+						<p><strong><span>SVOD DISPONIBLE por $99 adicionales</span></strong></p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>Sin Límite 3</p>
+						<p>Llamadas a teléfonos fijos y larga distancia internacional (EUA y Canadá)</p>
+						<p>300 minutos a celular nacional 4</p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>$619</p>
+						<p>Precio de lista</p>
+						<p>* Consulta términos y condiciones</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</article>
+
+		<article class="paquetes__lista--item">
+
+			<div class="paquetes__lista--info">
+
+				<aside class="paquetes__lista--info-titulo">
+					<h3>Esencial</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-contenido info__contenido">
+
+					<div class="info__contenido--item">
+						<img src="images/10e.png" alt="10 mb"/>
+						<strong>Mbps</strong>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>70</strong> Canales 1</p>
+						<p><strong>20</strong> Canales HD</p>
+					</div>
+
+					<div class="info__contenido--item">
+						<p><strong>Sin Límite</strong> 3</p>
+						<p>Incluye: 1 Línea</p>
+					</div>
+
+					<div class="info__contenido--item"><strong><span>$569*</span></strong>
+						<p>Pronto Pago</p>
+					</div>
+
+				</div>
+
+			</div>
+		  
+
+			<div class="paquetes__lista--detalles">
+
+				<aside class="paquetes__lista--detalles--info-titulo paquetes__titulo-js">
+					<h3>Detalles</h3>
+				</aside>
+
+				<div class="paquetes__lista--info-detalles info__detalles">
+
+					<div class="info__detalles--item">
+						<p><i>1 TV</i></p>
+						<p>Incluye:AnytimeTv Regresa tu programación sin costo extra</p>
+						<p><strong>Video On Demand</strong></p>
+						<p><strong><span>SVOD DISPONIBLE por $99 adicionales</span></strong></p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>Sin Límite 3</p>
+						<p>Llamadas a teléfonos fijos y larga distancia internacional (EUA y Canadá)</p>
+						<p>300 minutos a celular nacional 4</p>
+					</div>
+
+					<div class="info__detalles--item">
+						<p>$619</p>
+						<p>Precio de lista</p>
+						<p>* Consulta términos y condiciones</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</article>
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title.page-title__paquetes
+		h1  Paquetes 
+			span Totalplay
+
+		img(src="images/1.png", alt="Paquetes Totalplay")
+
+		h2 Por favor selecciona tu ciudad de residencia
+
+
+
+	//- /*===================================================================*\
+		    * @mapa *
+		\*===================================================================*/
+
+	.mapa#contenedor
+		.nombre__ciudad
+			p
+		include mapa
+
+
+	//- /*===================================================================*\
+		    * @lugares *
+		\*===================================================================*/
+
+	.paquetes__lugares(style="display:none;")
+		block listaLugares
+
+		if lugares.length
+			.paquetes__lugares--lista
+				each lugar in lugares
+					a(href=lugar.enlace, class="ciudad-#{lugar.enlace}" data-ciudad=lugar.enlace) #{lugar.nombre}
+
+	section.paquetes__lista#contenedorPaquetes
+
+		//- Paquete
+
+		//- article.paquetes__lista--item
+		//- 	.paquetes__lista--info
+		//- 		aside.paquetes__lista--info-titulo
+		//- 			h3 Sin Límite
+		//- 		.paquetes__lista--info-contenido.info__contenido
+		//- 			.info__contenido--item
+		//- 				img(src="images/10e.png", alt="10 mb")
+		//- 				strong Mbps
+		//- 			.info__contenido--item
+		//- 				p <strong>70</strong> Canales 1
+		//- 				p <strong>20</strong> Canales HD
+		//- 			.info__contenido--item
+		//- 				p <strong>Sin Límite</strong> 3
+		//- 				p Incluye: 1 Línea
+		//- 			.info__contenido--item
+		//- 				strong: span $569*
+		//- 				p Pronto Pago
+
+
+		//- 	.paquetes__lista--detalles
+		//- 		aside.paquetes__lista--detalles--info-titulo.paquetes__titulo-js
+		//- 			h3 Detalles
+		//- 		.paquetes__lista--info-detalles.info__detalles
+		//- 			.info__detalles--item
+		//- 				p: i 1 TV
+		//- 				p Incluye:AnytimeTv Regresa tu programación sin costo extra
+		//- 				p: strong Video On Demand
+		//- 				p: strong: span SVOD DISPONIBLE por $99 adicionales
+
+		//- 			.info__detalles--item
+		//- 				p Sin Límite 3
+		//- 				p Llamadas a teléfonos fijos y larga distancia internacional (EUA y Canadá)
+		//- 				p 300 minutos a celular nacional 4
+		//- 			.info__detalles--item
+		//- 				p $619
+		//- 				p Precio de lista
+		//- 				p * Consulta términos y condiciones

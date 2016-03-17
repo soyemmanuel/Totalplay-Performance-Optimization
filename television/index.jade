@@ -1,0 +1,209 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA TELEVISIÓN TOTALPLAY 
+	*
+	* Variables _______________________________ @Variables
+	* Contenido Principal de la página ________ @Contenido
+	* Título de la página _____________________ @Título
+	* Slider __________________________________ @Slider
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Televisión"
+	- var currentUrl = "/television"
+	- var favicon = "images/favicon.ico"
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "oscares.png"
+	- var alt = "Televisión - Totalplay"
+
+	//- ¡No Quitar! Aunque vacío es importante
+	- var values = [];
+
+	- values.push({enlace:'vod', imagen:'oscares.png'});
+	- values.push({enlace:'contrata', imagen:'deportes.jpg'});
+	- values.push({enlace:'contrata', imagen:'anytime.jpg'});
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Televisión
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	section.television
+		.sub-titulo
+			h3
+				span La mejor televisión 
+				| con servicios exclusivos
+
+		.television__item
+			aside.television__item--icono
+				img(src="images/anytime-ico.png", alt="Anytime")
+			.television__item--info
+				h2 AnytimeTv
+				p Es el servicio que te permite regresar el tiempo de tus programas favoritos sin costo adicional
+			.television__item--imagen
+				figure
+					img(src="images/anytime.png", alt="Anytime")
+		.television__item.derecha
+			.television__item--info
+				h2 Totalplay Donde Sea
+				p Duplica tus pantallas con tus dispositivos móviles. Lleva el entretenimiento a donde vayas y disfruta tus películas, series, programas en vivo o renta los últimos estrenos desde tu celular, tablet o computadora.
+			.television__item--imagen
+				figure
+					img(src="images/dispositivos-tv1.jpg", alt="Totalplay Donde Sea")
+		.television__item
+			aside.television__item--icono
+				img(src="images/gana-ok-icono.png", alt="Gana con un ok")
+			.television__item--info
+				h2 ¡Gana con un Ok!
+				p Desde tu TV y con tu control remoto tendrás la oportunidad de ganar increíbles premios participando en las trivias que estarán apareciendo en tus programas favoritos. Para ganar, sólo tienes que ser el primero en responder correctamente todas las preguntas.
+				p Muy pronto más trivias y más premios. ¡Espéralos!
+			.television__item--imagen
+				figure
+					img(src="images/tv-gana-ok.png", alt="Gana con un ok")
+		.television__item.derecha
+			aside.television__item--icono
+				img(src="images/2-1.png", alt="Alta definición")
+			.television__item--info
+				h2 Alta definición
+				p Disfruta de tus programas preferidos en HD sin costo adicional en todos nuestros planes y sin contratar equipo adicional. La TV como siempre la quisiste ver.
+			.television__item--imagen
+				figure
+					img(src="images/grafico-hd-sitio-web.png", alt="Alta definición")
+		.television__item
+			aside.television__item--icono
+				img(src="images/vod-ico.png", alt="Video On Demand")
+			.television__item--info
+				h2 Video On Demand
+				p ¡Más entretenimiento, como nunca lo imaginaste! Disfruta de nuestro catálogo con cientos de títulos de los que podrás escoger entre películas, telenovelas, series, conciertos, contenido infantil y más.
+			.television__item--imagen
+				figure
+					img(src="images/3.png", alt="Video On Demand")
+		.television__item.derecha
+			aside.television__item--icono
+				img(src="images/4-1.png", alt="3D")
+			.television__item--info
+				h2 3D
+				p Contenido exclusivo en 3D, somos los primeros en Latinoamérica en ofrecer programación en vivo en tercera dimensión.
+			.television__item--imagen
+				figure
+					img(src="images/4.png", alt="3D")
+		.television__item
+			.television__item--info
+				h2 Control remoto
+				p Transforma tu smartphone en un control remoto. Cambia de canal, ajusta el volumen, disfruta tu programación y más desde la pantalla de tu celular con la aplicación Totalplay Donde Sea.
+			.television__item--imagen
+				figure
+					img(src="images/control-remoto-para-pagina-web.jpg", alt="Control Remoto")
+
+			aside.sub-titulo
+				h3 La única <span>Televisión</span> realmente interactiva
+
+				figure.tv-interactiva__imagen
+					img(src="images/5.png", alt="Televisión realmente interactiva")
+
+
+		section.tv-interactiva
+
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/deezer.png", alt="Deezer")
+					img(src="images/balazo-promo.png", alt="Promo Deezer")
+				.tv-interactiva__item--info
+					p Más de 35 millones de canciones, escucha a tus artistas favoritos con la mejor calidad de audio por $99.
+					p Consulta los
+						a(href="") términos y condiciones.
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/facebook.png", alt="Facebook")
+				.tv-interactiva__item--info
+					p Sincroniza tu cuenta y comparte con tus amigos lo que estás viendo desde tu televisión ¡al instante!
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/9.png", alt="Soccer")
+				.tv-interactiva__item--info
+					p Consulta al instante las estadísticas de los partidos, así como sedes, liguillas, encuentros y mucho más desde tu TV, celular, tablet o computadora. Entérate de los resultados antes que todos.
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/10.png", alt="TuneIn")
+				.tv-interactiva__item--info
+					p Con sólo un clic sintoniza desde tu TV más de 100,000 estaciones de radio en vivo de todo el mundo y disfruta de los mejores programas de música, noticias, deportes, conciertos y mucho más.
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/11.png", alt="Horóscopo")
+				.tv-interactiva__item--info
+					p Explora lo que el futuro tiene para ti con las mejores predicciones y el horóscopo chino
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/7.png", alt="Media Center")
+					h3 Media center
+				.tv-interactiva__item--info
+					p Inserta una memoria USB en tu decodificador con las fotos y videos que tanto te gusta ver y disfrútalos desde tu TV.
+					a(href="") Ver Video
+			article.tv-interactiva__item
+				.tv-interactiva__item--imagen
+					img(src="images/6.png", alt="Mi Perfil")
+					h3 Mi perfil
+				.tv-interactiva__item--info
+					p Personaliza tu TV. Elige el fondo que más te agrade y escoge un avatar. ¡La pantalla se verá exactamente como tú quieres!
+
+

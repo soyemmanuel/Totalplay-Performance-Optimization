@@ -1,0 +1,144 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Canales"
+	- var currentUrl = "/canales"
+	- var favicon = "images/favicon.ico"
+
+
+block slider
+
+	- var folder = "images/hbo/slider"
+	- var defaulSlider = "hbo-1.jpg"
+	- var alt = "Canales - Totalplay"
+
+	- var values = ['hbo-1.jpg', 'hbo-2.jpg', 'hbo-3.jpg', 'hbo-4.jpg'];
+
+
+block handlebars
+
+	script(id="lista-canales" type="x-handlebars-template").
+
+		<div class="canales__item">
+			<figure class="canales__item--imagen"><img src="{{imagen}}" alt="Canales hbo"/>
+				<figcaption class="canales__item--info">
+					<h2>{{titulo}}</h2>
+					<p>{{descripcion}}</p>
+				</figcaption>
+			</figure>
+		</div>
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Guía de 
+			span Canales
+
+		h2 Coloca el ratón sobre tu canal favorito para obtener más información.
+
+
+	.canales__botones
+		a(href="") Guía de canales
+		a(href="") Frecuencia de Canales
+	
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+
+
+
+	.menu__canales--wrap
+		h2 HBO / MAX
+		ul.canales__menu
+			li.canales__menu--item
+				a.active(href='hbo') HBO / MAX
+			li.canales__menu--item
+				a(href='fox') FOX+
+			li.canales__menu--item
+				a(href='canales-hd') CANALES HD
+			li.canales__menu--item
+				a(href='a-la-carta') A LA CARTA
+			li.canales__menu--item
+				a(href='cine') CINE
+			li.canales__menu--item
+				a(href='tv-abierta') TV ABIERTA
+			li.canales__menu--item
+				a(href='internacional') INTERNACIONAL
+			li.canales__menu--item
+				a(href='entretenimiento') ENTRETENIMIENTO
+			li.canales__menu--item
+				a(href='cultura') CULTURA
+			li.canales__menu--item
+				a(href='infantil') INFANTIL
+			li.canales__menu--item
+				a(href='deportes') DEPORTES
+			li.canales__menu--item
+				a(href='noticias') NOTICIAS
+			li.canales__menu--item
+				a(href='musica') MÚSICA
+			li.canales__menu--item
+				a(href='adultos') ADULTOS
+
+
+	.canales#contenedor

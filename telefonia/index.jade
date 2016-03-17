@@ -1,0 +1,112 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA TELEFONÍA TOTALPLAY 
+	*
+	* Variables _______________________________ @Variables
+	* Contenido Principal de la página ________ @Contenido
+	* Título de la página _____________________ @Título
+	* Slider __________________________________ @Slider
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Telefonía - Totalplay"
+	- var currentUrl = "/telefonia"
+	- var favicon = "images/favicon.ico"
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "sin-limite.jpg"
+	- var alt = "Televisión - Totalplay"
+
+	- var values = [];
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Telefonía
+			span Totalplay
+
+		h2 Mantente siempre comunicado con llamadas a números fijos y de Larga Distancia Internacional sin límite, además de contar con los minutos a celular que justo necesitas. ¡Ahorra y habla mucho más!
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	section.telefonia
+		.telefonia__item
+			.telefonia__item--info
+				h3 Portabilidad
+				p Conserva tu número telefónico aunque cambies de compañía y sigue en contacto con tus familiares y amigos. El tramite de portabilidad es muy fácil ya que se realiza de manera electrónica y sin largos procesos.
+			.telefonia__item--imagen
+				img(src="images/1.png", alt="Telefonía Totalplay")
+		.telefonia__item.reverse
+			.telefonia__item--info
+				h3 Llamadas a números fijos y Larga Distancia Internacional sin límite*
+				p Llama a todos tus familiares sin costo extra y sin importar donde se encuentren. Disfruta de llamadas a números fijos y de Larga Distancia Internacional (EUA y Canadá) sin límite en cada uno de nuestros planes.
+			.telefonia__item--imagen
+				img(src="images/2.png", alt="Telefonía Totalplay")
+		.telefonia__item
+			.telefonia__item--info
+				h3 Los minutos a celular Nacional que justo necesitas**
+				p Te incluimos minutos para llamadas a celular nacional de cualquier compañía. Además los minutos adicionales a celular cuestan sólo 84 centavos.
+			.telefonia__item--imagen
+				img(src="images/3.png", alt="Telefonía Totalplay")
+
+		small
+			p *APLICA PARA PLANES CON TELEFONÍA, CONSULTA LA TABLA DE LAS PRINCIPALES CIUDADES PARTICIPANTES DE LA REPÚBLICA, LAS POLÍTICAS DE USO JUSTO, TÉRMINOS Y CONDICIONES EN WWW.TOTALPLAY.COM.MX.
+			p **LOS MINUTOS A CELULAR NACIONAL DEPENDEN DEL PLAN CONTRATADO.

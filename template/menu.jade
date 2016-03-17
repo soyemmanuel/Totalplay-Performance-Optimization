@@ -1,0 +1,116 @@
+//- /*-----------------------------------------------------*\
+	*
+	* TEMPLATE MENÚ
+	*
+	* Header ________________________ @Header
+	* Menú __________________________ @Menú
+	* Menú Especial (Empresarios) ___ @Menú-Especial
+	* Menú Secundario _______________ @Secundario
+	*
+	/*-----------------------------------------------------*\
+
+
+
+//- /*===================================================================*\
+	    * @Header *
+	\*===================================================================*/
+
+
+header.header
+
+	//- /*==============================================*\
+		    * @Menú *
+		\*==============================================*/
+
+	if especial
+		.logo.header__item
+			a(href="/")
+				img(src=interna ? "images/total_play_logo.png": "../images/total_play_logo.png", alt="Totalplay")
+			a.menu__mobile: span
+			.clearfix
+
+		nav.menu__principal.header__item
+			.titulo-menu
+					h2 Menú
+			ul
+				li.menu__item--empresarios(class={active: currentUrl === "/empresarios"})
+					a.menu__principal--item(href=interna ? "empresarios" : "../empresarios") Empresarios Totalplay
+				li
+					a.menu__principal--item(href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm") Totalplay Donde Sea
+				li(class={active: currentUrl === "/internet"})
+					a.menu__principal--item(href=interna ? "internet" : "../internet") Internet
+				li(class={active: currentUrl === "/television"})
+					a.menu__principal--item(href=interna ? "television" : "../television") Televisión
+				li(class={active: currentUrl === "/telefonia"})
+					a.menu__principal--item(href= interna ? "telefonia" : "../telefonia") Telefonía
+				li(class={active: currentUrl === "/paquetes"})
+					a.menu__principal--item(href=interna ? "paquetes" : "../paquetes") Paquetes
+				li(class={active: currentUrl === "/contrata"})
+					a.menu__principal--item(href=interna ? "contrata" : "../contrata") ¡Cambiate Ya!
+	else
+
+
+		//- /*==============================================*\
+			    * @Menú-Especial (Empresarios) *
+			\*==============================================*/
+
+
+		.logo.header__item
+			a(href="../empresarios")
+				img(src=interna ? "images/empresarios-logo.png" : "../empresarios/images/empresarios-logo.png", alt="Totalplay Empresarios")
+			a.menu__mobile: span
+			.clearfix
+
+		nav.menu__principal.header__item.menu__principal--especial
+			.titulo-menu
+					h2 Menú
+			ul
+				li.menu__item--empresarios(class={active: currentUrl === "/empresarios/paquetes"})
+					a.menu__principal--item(href="paquetes.html") Paquetes
+				li.menu__item--empresarios(class={active: currentUrl === "/empresarios/contrata"})
+					a.menu__principal--item(href="contrata.html") ¡Cámbiate Ya!
+				li.menu__item--empresarios.especial
+					a.menu__principal--item(href="/") Residencial Totalplay
+
+
+
+//- /*===================================================================*\
+	    * @Secundario *
+	\*===================================================================*/
+
+
+if secundario
+	.menu__wrap
+		.busqueda-google: <gcse:searchbox-only></gcse:searchbox-only>
+		.menu__secundario--wrap
+			ul.menu__secundario
+				li
+					a(href=interna ? "canales" : "../canales") Canales
+				li
+					a(href=interna ? "vod" : "../vod") Video 
+						br
+						| On Demand
+				li
+					a(href=interna ? "ayuda" : "../ayuda") Ayuda
+				li
+					a(href="https://www.mitotalplay.com.mx/") Mi Cuenta 
+						br
+						| Totalplay
+				li
+					a(href="") Cobertura
+				li
+					a(href=interna ? "totalplay" : "../totalplay") ¿Que es 
+						br
+						| Totalplay?
+				li
+					a(href="http://blog.totalplay.com.mx/" target="_blank") Blog
+				li
+					a(href=interna ? "contrata" : "../contrata") Puntos 
+						br
+						| de Venta
+				li
+					a(href="http://www.facebook.com/totalplay" target="_blank") Facebook
+				li
+					a(href="http://www.twitter.com/totalplaymx" target="_blank") Twitter
+
+	<gcse:searchresults></gcse:searchresults>

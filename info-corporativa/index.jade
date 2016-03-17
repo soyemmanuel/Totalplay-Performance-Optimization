@@ -1,0 +1,112 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA 
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Información Corporativa"
+	- var currentUrl = "/informacion-corporativa"
+	- var favicon = "images/favicon.ico"
+
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "1.jpg"
+	- var alt = "Informacion Corporativa - Totalplay"
+
+	- var values = [];
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1 Información 
+			span Corporativa
+
+		h2 Conócenos más a fondo y verás que tenemos más productos y servicios de los que te puedes imaginar.
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	section.corporativo
+
+		.corporativo__item
+			.corporativo__item--info
+				h3 Enlace
+				p El mejor servicio de Telefonía Fija e Internet para tu negocio. ¡Visítanos!
+				a.corporativo-link(href="") Leer más...
+			.corporativo__item--imagen
+				img(src="images/3.jpg", alt="Enlace Totalplay")
+
+		.corporativo__item.reverse
+			.corporativo__item--info
+				h3 Elektra onLine
+				p e-Commerce con las mejores marcas al mejor precio y entregas en 24Hrs. Más de 1000 tiendas a domicilio.
+				a.corporativo-link(href="") Leer más...
+			.corporativo__item--imagen
+				img(src="images/4.jpg", alt="Elektra onLine")
+
+		.corporativo__item
+			.corporativo__item--info
+				h3 Distribuidores
+				p ¿Quieres ser distribuidor Totalplay? ¡Dale Play a tu futuro!
+				a.corporativo-link(href="") Leer más...
+			.corporativo__item--imagen
+				img(src="images/5.jpg", alt="Distribuidores")

@@ -1,0 +1,189 @@
+//- Template
+extends ../template/template
+
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA EMPRESARIOS TOTALPLAY
+	*
+	* Variables _______________________________ @Variables
+	* Contenido Principal _____________________ @Contenido
+	* Título Principal de la página ___________ @Título
+	* Slider __________________________________ @Slider
+	* Features ________________________________ @Features
+	* Apps ____________________________________ @Apps
+	* Logo Diferencia _________________________ @Logo
+	*
+	/*-----------------------------------------------------*\
+ 
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Empresarios"
+	- var favicon = "images/favicon.ico"
+	- var currentUrl = "/empresarios"
+
+block headerEspecial
+
+	- var secundario = false
+	- var especial = false
+
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "empresarios-tel.jpg"
+	- var alt = "Empresarios Totalplay"
+
+	- var values = [];
+
+	- values.push({enlace:'', imagen:'empresarios-tel.jpg'});
+	- values.push({enlace:'',imagen:'empresarios-internet.jpg'});
+
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+block Content
+
+
+
+	//- /*=========================================================*\
+		    * @Título *
+		\*=========================================================*/
+
+	.page-title
+		h1  Tecnología que 
+			span impulsa tu empresa.
+
+		h2 Conéctate a nuestra red de fibra óptica con la más alta calidad para proteger, difundir y dar el mejor servicio a todos tus clientes.
+	
+	
+
+
+
+	//- /*=========================================================*\
+		    * @Slider *
+		\*=========================================================*/
+
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+	
+	main.page-empresarios
+	
+		h2 Incrementa la productividad de tu empresa con nuestra red de fibra óptica
+	
+
+
+		//- /*=========================================================*\
+			    * @Features *
+			\*=========================================================*/
+
+		section.features
+
+			article.features__item
+				figure
+					img(src="images/empresarios-internet-th.jpg", alt="empresarios ")
+					figcaption
+						h3 Internet
+					aside.features__item--description
+						p Con la capacidad requerida para el envío y recepción de datos así como la distribución óptima vía WiFi sin perder velocidad.
+			article.features__item
+				figure
+					img(src="images/empresarios-telefonia.jpg", alt="empresarios ")
+					figcaption
+						h3 Telefonía
+					aside.features__item--description
+						p ¡Extiende tus llamadas el tiempo que necesites! Habla sin límite a números fijos y LDI, con minutos a celular incluidos.
+
+
+
+
+
+		//- /*=========================================================*\
+			    * @Apps *
+			\*=========================================================*/
+		
+
+		section.apps
+
+		h2 Impulsa el desarrollo de tu empresa con nuestras Aplicaciones Empresariales incluidas
+
+
+			article.apps__item
+				.apps__item--icono
+					img(src="images/iconos-apps/empresarios-servicios-digitales-ico.png", alt="")
+				.apps__item--info
+					h3 SERVICIOS DE TELEFONÍA:
+					p La asistencia que siempre soñaste para dar el mejor servicio a todas tus llamadas entrantes.
+					ul
+						li Llamada en espera
+						li Desvío de Llamadas
+						li Identificador de Llamadas
+						li Música en espera
+			article.apps__item
+				.apps__item--icono
+					img(src="images/iconos-apps/empresarios-asesor-virtual-ico.png", alt="")
+				.apps__item--info
+					h3 ASESOR VIRTUAL:
+					p El servicio perfecto de protección y atención para el resguardo de tu información.
+					ul
+						li Licencia de Antivirus para 5 equipos
+						li Soporte vía: chat, teléfono y visitas a domicilio*
+
+			article.apps__item
+				.apps__item--icono
+					img(src="images/iconos-apps/empresarios-administrador-total.png", alt="")
+				.apps__item--info
+					h3 ADMINISTRADOR TOTAL:
+					p Aplicación para la administración financiera y operativa de tu empresa.
+					ul
+						li Cotizaciones
+						li Factura electrónica con CFDIs, ilimitadas†
+						li Inventarios
+						li Contabilidad electrónica
+					p Incluido desde el Plan Emprendedor
+	
+		//- /*=========================================================*\
+			    * @Logo *
+			\*=========================================================*/
+
+	.diferencia-img
+		img(src="images/iconos-apps/empresarios-la-diferencia-es-total.png", alt="La diferencia es total")
+
+		p *Visitas 1 al año.†1000 folios por licencia.

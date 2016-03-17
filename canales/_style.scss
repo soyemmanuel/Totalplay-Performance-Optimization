@@ -1,0 +1,312 @@
+.canales{
+
+	@include flexbox-display-flex;
+	@include centrado(860px)
+
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-o-flex-flow: row wrap;
+	flex-flow: row wrap;
+
+	-webkit-justify-content: space-around;
+	-moz-justify-content: space-around;
+	-ms-justify-content: space-around;
+	-o-justify-content: space-around;
+	justify-content: space-around;
+
+	-ms-align-items: stretch;
+	align-items: stretch;
+
+
+	&__botones{
+		text-align: center;
+
+		a{
+			background-color: #ffb131;
+			border: solid 1px #ffb131;
+			border-radius: 5px;
+			color: #fff;
+			font-weight: normal;
+			font-size: 1rem;
+			line-height: 56px;
+			width: 290px;
+			display: block;
+			margin: 1rem auto;
+			height: 56px;
+			padding: 0 0 0 18px;
+			text-align: left;
+			position: relative;
+
+			&::after{
+				content: url('../canales/images/plus-icon.png');
+				border-radius: 50%;
+				color: #ffb131;
+				width: 39px;
+				height: 39px;
+				font-weight: 300;
+				position: absolute;
+				right: 1rem;
+				top: .5rem;
+
+			}
+
+		/*====| MediaQuerie distribuidores__bloque 768px |====*/
+
+		@media screen and(min-width:600px){
+			display: inline-block;
+			margin: 1rem;
+			vertical-align: middle;
+		}
+
+			
+		}
+	}
+
+	&__item{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,dbdbdb+18,efefef+19,efefef+100 */
+		background: rgb(238,238,238); /* Old browsers */
+		background: -moz-linear-gradient(-45deg,  rgba(238,238,238,1) 0%, rgba(219,219,219,1) 18%, rgba(239,239,239,1) 19%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg,  rgba(238,238,238,1) 0%,rgba(219,219,219,1) 18%,rgba(239,239,239,1) 19%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg,  rgba(238,238,238,1) 0%,rgba(219,219,219,1) 18%,rgba(239,239,239,1) 19%,rgba(239,239,239,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		
+		box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+
+		border-radius:10px;
+		max-width: 90%;
+		margin-bottom: 1rem;
+		margin-top:1rem;
+		overflow: hidden;
+
+		-webkit-transition: all ease .7s;
+		-o-transition: all ease .7s;
+		transition: all ease .7s;
+
+		&:hover{
+			cursor: pointer;
+			box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+
+			.canales__item--info{
+				opacity: 1;
+				-moz-transition: all .7s ease;
+				-webkit-transition: all .7s ease;
+				-o-transition: all .7s ease;
+				transition: all .7s ease;
+				visibility: visible;
+				-webkit-transform: rotateX(400grad);
+				transform: rotateX(400grad);
+			}			
+		}
+
+		&:nth-of-type(2n+1){
+
+			.canales__item--info{
+				background-color: #e40278;			
+			}
+
+
+		}
+
+		&:nth-of-type(3n+4){
+			.canales__item--info{
+				background-color: #e87800;
+			}
+		}
+
+		&:nth-of-type(3n+3){
+			.canales__item--info{
+				background-color: $negro;
+			}
+		}
+
+		&--imagen{
+			height: 250px;
+			position: relative;
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			padding: 1rem;
+
+			& *{
+				vertical-align: middle;
+			}
+		}
+
+		&--info{
+			color: $blanco;
+			background-color: $azul;
+			-moz-transition: all .7s ease;
+			-webkit-transition: all .7s ease;
+			-o-transition: all .7s ease;
+			transition: all .7s ease;
+			top: 0;
+			-webkit-transform: rotateX(200grad);
+			transform: rotateX(200grad);
+			visibility: hidden;
+			opacity: 0;
+
+			display: table-cell;
+			vertical-align: middle;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			padding: 1rem;
+			border-radius: 10px;
+
+
+			h2{
+				border-bottom: solid 1px #fff;
+				font-size: 1rem;
+				text-align: center;
+				margin: 15px 10px 5px 10px;
+				padding-bottom: 5px;	
+				font-weight: 300;			
+			}
+			p{
+				text-align: center;
+				font-size: .7rem;
+				margin: 5px 10px 5px 10px;				
+			}
+		}
+	}
+}
+
+
+
+
+.menu__canales--wrap{
+	border-radius: 5px;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 10;
+	@include centrado(860px)
+
+	&::after{
+		content: url('../canales/images/flechas-blancas.png');
+		width: 16px;
+		height: 16px;
+		font-weight: 300;
+		position: absolute;
+		right: .5rem;
+		top: .5rem;
+		overflow: hidden;
+	}
+
+	h2{
+		border-radius: 5px;
+		background-color: #7f3f98;
+		border: 2px solid #ff0b7f;
+		color: $blanco;
+		font-size: 14px;
+		margin: 0;
+		font-weight: 300;
+		width: 100%;
+		padding: .5rem 1rem;
+		position: relative;
+
+
+	}
+
+	.canales__menu{
+		// display: none;
+		padding: 1rem .5rem;
+		margin: 0;
+		background-color: #ecf0f1;
+		list-style-type: none;
+		position: absolute;
+		top: -2rem;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;
+		display: none;
+
+		-webkit-transition: all ease .5s;
+		-o-transition: all ease .5s;
+		transition: all ease .5s;
+
+		&--item{
+
+			a{
+				-webkit-transition: all ease .5s;
+				-o-transition: all ease .5s;
+				transition: all ease .5s;
+				border-bottom: 1px solid #bdc3c7;
+				padding: .5rem 1rem;
+				display: block;
+				width: 100%;
+
+				&:hover,
+				&.active{
+					background-color: #7f3f98;
+					color: $blanco;
+				}
+
+			}
+
+		}
+
+		&.is-visible{
+			box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+			top: 2.3rem;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+
+		/*====| MediaQuerie menu__canales 600px |====*/
+
+		@media screen and(min-width:600px){
+			h2{
+				display: none;
+			}
+
+			.canales__menu{
+				background-color: $blanco;
+			
+				@include centrado(960px)
+				@include flexbox-display-flex;
+
+				-webkit-flex-flow: row wrap;
+				-moz-flex-flow: row wrap;
+				-ms-flex-flow: row wrap;
+				-o-flex-flow: row wrap;
+				flex-flow: row wrap;
+
+				-webkit-justify-content: center;
+				-moz-justify-content: center;
+				-ms-justify-content: center;
+				-o-justify-content: center;
+				justify-content: center;
+
+				-ms-align-items: center;
+				align-items: center;
+
+				opacity: 1;
+				visibility: visible;
+				position: relative;
+				top: 0;
+
+				&--item{
+					display: inline-block;
+					background-color: #ecf0f1;
+					margin: .1rem;
+
+					a{
+						border-bottom: 0;
+					}
+				}
+
+			}
+		}
+
+
+}

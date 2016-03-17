@@ -1,0 +1,85 @@
+//- El archivo Config trae metadescriptions y title por defecto
+include config
+
+		//- /*-----------------------------------------------------*\
+			*
+			* TEMPLATE TOTALPLAY
+			*
+			* Header ________________________ @Header
+			* Menú __________________________ @Menú
+			* Contenido Principal ___________ @Contenido
+			* Footer ________________________ @Footer
+			* Script de la app ______________ @Script
+			*
+			/*-----------------------------------------------------*\
+
+
+
+
+
+		//- /*===================================================================*\
+			    * @Header *
+			    Modificar en: template/header.jade
+			\*===================================================================*/
+<!DOCTYPE html>
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		title #{Pagetitle}
+
+		meta(name="description", content=MetaDesc)
+
+		link(rel="shortcut icon", href=interna ? favicon : "../" + favicon )
+
+		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oxygen:400,700,300")
+		link(rel="stylesheet", href=interna ? "css/style.min.css" : "../css/style.min.css")
+		
+		block handlebars
+
+	//- No Quitar, Se pueden extinguir las vaquitas marinas :(
+	body
+		//- Script para buscador de Google
+		script(type="text/javascript" async).
+			(function() {
+				var cx = '001815477825129200167:vaaunjdxdna';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+		//- /*====================================================*\
+			    * @Menú *
+			    Modificar en: template/menu.jade
+			\*====================================================*/
+
+		include menu
+
+
+
+
+		//- /*====================================================*\
+			    * @Contenido *
+			    (modificar en el Template correspondiente)
+			\*====================================================*/
+
+		block Content
+
+
+
+		//- /*====================================================*\
+			    * @Footer *
+			    Modificar en: template/footer.jade
+			\*====================================================*/
+
+		include footer
+
+
+		//- /*====================================================*\
+			    * @Script *
+			\*====================================================*/
+
+		script(src=interna ? "js/script.min.js" : "../js/script.min.js", type="text/javascript")

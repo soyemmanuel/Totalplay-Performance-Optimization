@@ -1,0 +1,134 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA INTERNET TOTALPLAY
+	*
+	* Variables _______________________________ @Variables
+	* Contenido Principal de la página ________ @Contenido
+	* Título Principal de la página ___________ @Título
+	* Slider __________________________________ @Slider
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+
+block metatags
+
+	- var Pagetitle = "Internet - Totalplay"
+	- var currentUrl = "/internet"
+	- var favicon = "images/favicon.ico"
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "20-megas.jpg"
+	- var alt = "Internet"
+
+	- var values = [];
+
+	- values.push({enlace:'', imagen:'20-megas.jpg'});
+	- values.push({enlace:'',imagen:'30-megas.jpg'});
+	- values.push({enlace:'',imagen:'40-megas.jpg'});
+	- values.push({enlace:'',imagen:'50-megas.jpg'});
+	- values.push({enlace:'',imagen:'100-megas.jpg'});
+
+
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Internet  
+			span Totalplay
+
+		h2 El único internet realmente veloz de México ahora a tu alcance ¡El que siempre soñaste!
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+	section.internet
+		img(src="images/comparativa-2015.png", alt="Comparativa Totalplay")
+
+		.internet__item
+			.descargas__item
+				figure.internet__item--imagen
+					img(src="images/descargas2.png", alt="Descargas")
+			.descargas__item
+				aside.internet__item--info
+					h2 Descargas
+					span ¡Descarga en segundos!
+					p Conéctate y comienza a disfrutar de la velocidad perfecta para realizar toda tu actividad en línea, gracias al internet de Totalplay con hasta 300 Mbps, navega, reproduce videos en streaming y mucho más al mismo tiempo.
+					a.descargas__item--boton(href="") Aprovecha al máximo tu velocidad de internet
+
+		.internet__item.reverse
+			.subida__item
+				figure.internet__item--imagen
+					img(src="images/3.png", alt="Descargas")
+
+			.subida__item
+				aside.internet__item--info
+					h2 Subida
+					span Comparte tus archivos.
+					p Actualiza tu estado, carga tus fotografías y realiza videollamadas desde tus dispositivos móviles gracias al internet que disfrutas por medio de nuestra tecnología de última generación con Fibra Óptica hasta tu hogar (FTTH). 
+
+		.internet__item
+			.gamers__item
+				figure.internet__item--imagen
+					img(src="images/4.png", alt="Descargas")
+
+			.gamers__item
+				aside.internet__item--info
+					h2 Gamers
+					span Tus juegos en línea a toda velocidad.
+					p Rompe todos tus récords y conviértete en el líder mientras te diviertes en línea, ya no existirán pretextos de lentitud o interrupciones; a partir de ahora, demostrarás de qué estás hecho. (Recuerda que algunos sitios pueden requerir la contratación de una IP fija por separado)
+

@@ -1,0 +1,139 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA ESTADO DE CUENTA
+	*
+	* Variables _______________________________ @Variables
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Estado de Cuenta"
+	- var currentUrl = "/estado-de-cuenta"
+	- var favicon = "images/favicon.ico"
+
+block slider
+
+	- var folder = "images/slider"
+	- var defaulSlider = "estado-de-cuenta.jpg"
+	- var alt = "Estado de Cuenta Totalplay"
+
+	- var values = [];
+	- values.push({enlace:'http://mitotalplay.com.mx', imagen:'estado-de-cuenta.jpg'});
+	- values.push({enlace:'http://mitotalplay.com.mx', imagen:'mi-cuenta.jpg'});
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+
+		h1 Conoce tu Estado de Cuenta y 
+			span formas de pago
+
+		h2 Identifica todos los movientos de tu cuenta.
+	
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+
+
+	section.cuenta
+
+		.cuenta__item
+			.cuenta__item--imagen
+				img(src="images/1-estado-de-cuenta.jpg", alt="¿Cómo entender mi estado de cuenta?")
+			.cuenta__item--info
+				h2 ¿Cómo entender mi estado de cuenta?
+				p Te invitamos a descargar el manual, donde podrás conocer a detalle todas las secciones que integran tu estado de cuenta, así como ubicar tus cargos y servicios.
+				a.cuenta__descarga(href="") Descarga aquí...
+
+		.cuenta__item.reverse
+			.cuenta__item--imagen
+				img(src="images/2-pagar-mi-estado.jpg", alt="¿Cómo puedo pagar mi Estado de Cuenta?")
+			.cuenta__item--info
+				h2 ¿Cómo puedo pagar mi Estado de Cuenta?
+				p Pagar tu estado de cuenta es muy fácil.
+				p Descarga el manual y entérate de los detalles.
+				a.cuenta__descarga(href="") Descarga aquí...
+
+		.cuenta__item
+			.cuenta__item--imagen
+				img(src="images/3-como-recibire.jpg", alt="¿Cómo recibiré mi Estado de Cuenta?")
+			.cuenta__item--info
+				h2 ¿Cómo recibiré mi Estado de Cuenta?
+				p Tu Estado de Cuenta lo recibirás de manera mensual en el email que registraste al contratar. Se incluye la renta y cargos adicionales generados durante el mes por conceptos diversos como llamadas no incluidas en tu plan o renta de películas VOD.
+		
+		.cuenta__item.reverse
+			.cuenta__item--imagen
+				img(src="images/4-como-consultar.jpg", alt="¿Dónde puedo consultar mi Estado de Cuenta?")
+			.cuenta__item--info
+				h2 ¿Dónde puedo consultar mi Estado de Cuenta?
+				p Lo puedes consultar en www.mitotalplay.com.mx o bien desde tu televisión ingresando al Menú/Inicio/Estado de cuenta.
+		.cuenta__item
+			.cuenta__item--imagen
+				img(src="images/5-cual-es-el-descuento.jpg", alt="¿Cuál es el descuento por Pronto Pago?")
+			.cuenta__item--info
+				h2 ¿Cuál es el descuento por Pronto Pago?
+				p Todos los planes Totalplay tienen derecho a un descuento por pronto pago si son liquidados dentro de los primeros 10 días naturales después de haberse emitido tu Estado de Cuenta. Este descuento viene impreso en tu Estado, donde se detalla la cantidad a pagar y la fecha límite de pago para poder disfrutar de este beneficio. Los servicios adicionales no cuentan con este descuento.
+		
+		.cuenta__item.reverse
+			.cuenta__item--imagen
+				img(src="images/6-ayuda.jpg", alt="¿Dónde puedo obtener ayuda?")
+			.cuenta__item--info
+				h2 ¿Dónde puedo obtener ayuda?
+				p Llamando a nuestro Centro de Atención al 1579 8000 ó 01 800 510 0510.
+				p Recuerda tener a la mano los siguientes datos:
+				p - Número de cuenta  (ubícalo en la sección “información de tu cuenta”)
+				p - Nombre del titular de la cuenta
+				p - Número telefónico principal

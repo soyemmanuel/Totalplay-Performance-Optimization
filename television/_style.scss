@@ -1,0 +1,228 @@
+.television{
+
+	@include centrado(960px)
+
+	&__item{
+		margin-top: 2rem;
+		text-align: center;
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@extend .sombra-top;
+
+		&--icono{
+			img{
+			margin-left: auto;
+			margin-right: auto;				
+			}
+		}
+
+		&--imagen{
+			img{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		&--info{
+			h2{
+				font-size: 26px;
+				font-weight: 400;
+				margin-bottom: 15px;
+				color: $negro;
+			}
+			p{
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 19px;				
+			}
+		}
+
+
+		/*====| MediaQuerie televison__item 600px |====*/
+
+		@media screen and(min-width:600px){
+
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+
+			-ms-align-items: center;
+			align-items: center;
+
+			-webkit-justify-content: space-around;
+			-moz-justify-content: space-around;
+			-ms-justify-content: space-around;
+			-o-justify-content: space-around;
+			justify-content: space-around;
+			max-width: 100%;
+			
+			@include flexbox-display-flex;
+
+			&--icono{
+				max-width: 8%;
+			}
+
+			&--info{
+				max-width: 57%;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				text-align: left;
+			}
+
+			&--imagen{
+				max-width: 35%;
+				figure{
+					max-width: 331px;
+				}
+			}
+
+			&.derecha{
+				-webkit-flex-direction: row-reverse;
+				-moz-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				-o-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+			}
+
+
+		/*====| MediaQuerie televison__item 960px |====*/
+
+		@media screen and(min-width:960px){
+			&--imagen{
+				max-width: 40%;
+			}
+
+			&--info{
+				max-width: 52%;
+			}
+		}
+
+		}	
+
+	}
+
+	.sub-titulo{
+		text-align: center;
+		color: $negro;
+	
+		h3{
+		font-size: 22px;
+		font-weight: 700;
+		margin-bottom: 0;
+			
+		}
+
+		span{
+			color: #d5e505;
+		}
+	}
+}
+
+
+
+.tv-interactiva{
+
+
+	&__imagen{
+
+		@extend .sombra-top;
+
+		img{
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+
+
+
+
+	&__item{
+
+		text-align: center;
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2rem;
+
+		&--imagen{
+			img{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+	}
+
+
+
+
+	/*====| MediaQuerie tv-interactiva 600px |====*/
+
+	@media screen and(min-width:600px){
+		-webkit-flex-flow: row wrap;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-o-flex-flow: row wrap;
+		flex-flow: row wrap;
+
+		-webkit-justify-content: space-between;
+		-moz-justify-content: space-between;
+		-ms-justify-content: space-between;
+		-o-justify-content: space-between;
+		justify-content: space-between;
+
+		-ms-align-items: center;
+		align-items: center;
+
+
+		@include flexbox-display-flex;
+
+		&__item{
+			text-align: left;
+			width: 40%;
+
+
+			&--imagen{
+				img{
+					display: inline-block;
+					vertical-align: bottom;
+
+					&:nth-of-type(2){
+						max-width: 153px;
+						width: 49%;
+						margin-right: 0;
+						margin-left: auto;	
+					}
+				}
+
+				h3{
+					display: inline-block;
+					vertical-align: bottom;
+					margin-bottom: 0;
+					margin-bottom: 5px;
+					font-size: 26px;
+					font-weight: 400;
+					margin-left: 1rem;
+				}
+			}
+
+			&--info{
+				font-size: 14px;
+			}
+
+
+		}
+	}
+
+
+
+
+
+
+}
+

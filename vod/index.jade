@@ -1,0 +1,120 @@
+//- Template
+extends ../template/template
+
+//- /*-----------------------------------------------------*\
+	*
+	* PÁGINA VIDEO ON DEMAND TOTALPLAY
+	*
+	* Variables _______________________________ @Variables
+	* Contenido Principal de la página ________ @Contenido
+	* Título de la página _____________________ @Título
+	* Slider __________________________________ @Slider
+	*
+	/*-----------------------------------------------------*\
+
+
+
+
+//- /*===================================================================*\
+	    * @Variables *
+	\*===================================================================*/
+
+//- Metatags
+block metatags
+
+	- var Pagetitle = "Totalplay - Video on Demand"
+	- var currentUrl = "/vod"
+	- var favicon = "images/favicon.ico"
+
+
+
+
+block slider
+
+	- var folder = "images/slider/febrero"
+	- var defaulSlider = "cazador-de-brujas.jpg"
+	- var alt = "Video on Demand - Totalplay"
+
+	- var values = [];
+	- values.push({enlace:'', imagen:'cazador-de-brujas.jpg'});
+	- values.push({enlace:'',imagen:'actividad-paranormal.jpg'});
+	- values.push({enlace:'',imagen:'letras-explicitas.jpg'});
+	- values.push({enlace:'',imagen:'puente-de-espias.jpg'});
+	- values.push({enlace:'',imagen:'sicario.jpg'});
+
+
+
+//- /*===================================================================*\
+	    * @Contenido *
+	\*===================================================================*/
+
+
+
+block Content
+
+	//- /*===================================================================*\
+		    * @Título *
+		\*===================================================================*/
+
+	.page-title
+		h1  Video
+			span On Demand
+
+		h2 Podrás disfrutar de todo lo que te gusta una y otra vez en cualquier momento. VOD es tu videoclub en casa. Complace a todos los miembros de tu hogar y accede a un catálogo con cientos de títulos entre películas, series, telenovelas, conciertos y más. ¡Tú decides a que hora comienza la función!
+	
+
+
+
+
+	//- /*===================================================================*\
+		    * @Slider *
+		\*===================================================================*/
+
+	.slider
+		block slider
+		
+		if values.length
+			ul.bxslider
+				each val in values
+					li: a(href=val.enlace): picture
+						<!--[if IE 9]>
+						<video style="display: none;">
+						<![endif]-->
+						source(srcset=folder + '/' + val.imagen media="(min-width: 600px)")
+						<!--[if IE 9]>
+						</video>
+						<![endif]-->
+						img(src=folder + '/movil-' + val.imagen , alt=alt)
+		else
+			picture
+				<!--[if IE 9]>
+				<video style="display: none;">
+				<![endif]-->
+				source(srcset=folder + '/' + defaulSlider media="(min-width: 600px)")
+				<!--[if IE 9]>
+				</video>
+				<![endif]-->
+				img(src=folder + '/movil-' + defaulSlider, alt=alt)
+	
+	section.vod
+
+		a.catalogo--boton(href="") Consulta nuestro catálogo
+
+		.vod__item
+			.vod__item--imagen
+				img(src="images/vod-suscripcion.png", alt="Suscripción VOD")
+			.vod__item--info
+				h3 Suscripción VOD
+				p Suscríbete para acceder a nuestro catálogo con cientos de títulos de los que podrás escoger entre películas, series, telenovelas, conciertos y más por sólo $99 al mes. ¡Tú decides a qué hora comienza la función!
+		.vod__item.reverse
+			.vod__item--imagen
+				img(src="images/vod-a-la-carta.png", alt="VOD a la carta")
+			.vod__item--info
+				h3 VOD a la carta
+				p Accede a nuestro catálogo y renta la que más te guste con cargo a tu estado de cuenta Totalplay. Tienes un plazo de 24 horas para que la disfrutes cuantas veces quieras.
+		.vod__item
+			.vod__item--imagen
+				img(src="images/vod-multiroom.png", alt="Multiroom")
+			.vod__item--info
+				h3 Multiroom
+				p Si estás viendo una película en la sala y quieres cambiar de habitación, sólo ponle pausa y dale play desde otra televisión que cuente con el servicio de Totalplay.

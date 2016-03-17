@@ -1,0 +1,170 @@
+.distribuidores{
+		font-weight: 400;
+
+		@include centrado(960px)
+
+	&__titulo{
+
+		color: #646464;
+		font-size: .8rem;
+		text-align: left;
+		margin: 0;
+		p{
+			margin: 0;
+			a{
+				color: $azul;
+			}
+		}
+		span{		
+			font-weight: 300;
+			font-size: 1.25rem;
+		}
+	}
+
+	&__form{
+		color: #646464;
+		max-width: 90%;
+		margin: 1rem auto;
+
+
+			.form__group{
+				margin-bottom: 5px;
+				margin-top: 5px;
+
+				p{
+					font-size: .8rem;
+					text-align: left;
+					margin: 0;	
+				}
+				input{
+					background: #fff;
+					border: solid 1px #ccc;
+					border-radius: 4px;
+					box-shadow: none;
+					margin: 5px 0;
+					padding: 5px 5px 5px 10px;
+					width: 100%;
+				}
+				select{
+					width: 100%;
+				}
+
+				&.enviar{
+					button{					
+						background-color: #01b5e2;
+						border: medium none;
+						border-radius: 3px;
+						display: block;
+						color: #fff;
+						cursor: pointer;
+						font-size: 2.5em;
+						outline: medium none;
+						padding: 15px 10px;
+						-moz-transition: all .5s ease;
+						-webkit-transition: all .5s ease;
+						-o-transition: all .5s ease;
+						transition: all .5s ease;
+						vertical-align: top;
+						width: 100%;					
+					}
+				}
+				
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+	&__bloque{
+		/*====| MediaQuerie distribuidores__bloque 768px |====*/
+
+		@media screen and(min-width:768px){
+
+			@include flexbox-display-flex;
+
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			-o-flex-flow: row wrap;
+			flex-flow: row wrap;
+
+			-webkit-flex-direction: row-reverse;
+			-moz-flex-direction: row-reverse;
+			-ms-flex-direction: row-reverse;
+			-o-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+
+			-ms-align-items: flex-start;
+			align-items: flex-start;
+
+			& {
+				.distribuidores{
+
+					&__form{
+						width: 45%;
+
+						.form__group{
+							display: inline-block;
+							vertical-align: middle;
+							width: 49%;
+
+							&:first-of-type,
+							&:last-of-type{
+								width: 100%;
+								display: block;
+							}
+
+
+							&.radios-ubi{
+
+								input{
+									border-radius: 10px;
+									width: auto;
+								}
+
+								label{
+									margin-left: 11px;
+									margin-right: 2px;
+									font-weight: 400;
+									font-size: .8em;
+								}
+							}
+
+						}
+					}
+
+					&__imagen{
+						width: 50%;
+					}
+				}
+			}
+		}
+
+					/*====| MediaQuerie distribuidores__bloque 960px |====*/
+
+					@media screen and(min-width:960px){
+
+						.form__group{
+							display: inline-block;
+							vertical-align: middle;
+							width: 49%;
+
+							&:nth-of-type(2),
+							&:nth-of-type(3),
+							&:nth-of-type(4),
+							&:nth-of-type(5){
+								width: 24%;
+							}
+						}
+					}
+
+
+
+	}
+}

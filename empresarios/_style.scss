@@ -1,0 +1,211 @@
+/*-----------------------------*\
+*
+*    * Estilos Empresarios *
+* 
+* Estilos Page _______________ @Page
+* Estilos Features ___________ @Features
+* Estilos Apps _______________ @Apps
+* Estilos Diferencia imagen __ @Diferencia
+*    
+\*-----------------------------*/
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Page *
+\*==========================================================================*/
+
+
+.page-empresarios{
+
+	@extend .sombra-top;
+
+	h2{
+		color: #646465;
+		font-size: 26px;
+		font-weight: 400;
+		margin-top: 5px;
+		text-align: center;
+
+		@include centrado(960px)
+	}	
+}
+
+
+/*==========================================================================*\
+    * Estilos @Features *
+\*==========================================================================*/
+
+.features{
+
+	@include centrado(960px);
+
+	&__item{
+
+		padding: 14px;
+		padding-top: 14px;
+		color: #5b5b5e;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 27px;
+		text-align: left;
+
+		figure{
+			max-width: 345px;
+			margin: 0 auto;
+
+			img{
+				display: block;
+			}
+
+			figcaption{
+				display: block;
+				background-color: rgba(104,103,103,0.8);
+				text-align: left;
+				height: 54px;
+				padding: .5rem;
+
+				h3{
+					margin: 0;
+					font-size: 23px;
+					color: $blanco;
+					font-weight: 400;
+
+					&::before{
+						content: url('../empresarios/images/empresarios-internet-ico.png');
+						display: inline-block;
+						margin-right: .5rem;
+						height: 45px;
+						vertical-align: middle;
+						width: 45px;
+					}
+				}
+			}
+		}
+		&:last-of-type{
+			figure{
+				figcaption{
+					h3::before{
+						content: url('../empresarios/images/empresarios-telefonia-ico.png');
+					}
+				}
+			}
+		}
+	}
+
+	/*====| MediaQuerie Features 600px |====*/
+
+	@media screen and(min-width:600px){
+		-webkit-flex-flow: row wrap;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-o-flex-flow: row wrap;
+		flex-flow: row wrap;
+		-webkit-justify-content: space-around;
+		-moz-justify-content: space-around;
+		-ms-justify-content: space-around;
+		-o-justify-content: space-around;
+		justify-content: space-around;
+		@include flexbox-display-flex;
+
+	}	
+
+}
+
+
+
+
+/*==========================================================================*\
+    * Estilos @Apps *
+\*==========================================================================*/
+
+
+.apps{
+
+	@include centrado(960px);
+	@extend .sombra-top;
+
+	&__item{
+
+		margin-top: 2rem;
+
+		&--icono{
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		&--info{
+			text-align: center;
+			margin-top: 0;
+			font-weight: 400;
+			color: #5b5b5e;
+			font-size: 16px;
+			line-height: 26.93px;
+
+			p{
+				margin: 0;
+			}
+
+			h3{
+				font-weight: 800;
+				color: #5b5b5e;
+				font-size: 20px;
+				margin-bottom: 0;	
+			}
+			ul{
+				text-align: left;
+				font-weight: 700;
+			}
+
+		}
+
+		/*====| MediaQuerie Apps 768px |====*/
+
+		@media screen and(min-width:768px){
+
+			@include flexbox-display-flex;
+		
+			&--icono{
+				margin-left: 2rem;
+				margin-right: 2rem;
+			}
+			&--info{
+				text-align: left;
+			}
+
+		}
+	}
+
+}
+
+
+
+/*==========================================================================*\
+    * Estilos @Diferencia Imagen *
+\*==========================================================================*/
+
+.diferencia-img{
+	margin-bottom: 4rem;
+	margin-top: 6rem;
+	text-align: center;
+	max-width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+
+	img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 3rem;
+	}
+	
+	p{	
+		font-weight: 400;
+		color: #5b5b5e;
+		font-size: 16px;
+		line-height: 26.93px;
+	}
+}
